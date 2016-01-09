@@ -1,0 +1,22 @@
+{
+  "name": "angular-first-look",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnpapa/angular-first-look.git"
+  },
+  "author": "John Papa <john@johnpapa.net> (http://johnpapa.net/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johnpapa/angular-first-look/issues"
+  },
+  "homepage": "https://github.com/johnpapa/angular-first-look#readme",
+  "dependencies": {
+    "material-design-lite": "^1.0.6"
+  }
+}

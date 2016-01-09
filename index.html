@@ -1,48 +1,164 @@
-<html>
+<!DOCTYPE html>
+<html lang="en" ng-app="starterApp" ng-cloak>
 
 <head>
+  <title>Angular Material - Starter App</title>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+  <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+  <link rel="stylesheet" href="./bower_components/angular-material/angular-material.css" />
+  <link rel="stylesheet" href="assets/app.css" />
+
   <style type="text/css">
-    body {
-      background-color: #003c6c;
-      color: white;
-      font-family: az_ea_font, wf_segoe-ui_normal, "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
-      font-weight: lighter;
-      font-size: 13px;
-    }
+    /**
+         * Hide when Angular is not yet loaded and initialized
+         */
 
-    ul {
-      list-style-type: none;
-    }
-
-    li {
-      background-color: #003c6c;
-      color: white;
-      padding: 1em;
-      border: 2px solid #19507b;
-    }
-
-    li:hover {
-      background-color: #19507b;
-    }
-
-    a {
-      font-family: az_ea_font, wf_segoe-ui_normal, "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
-      font-weight: lighter;
-      font-size: 13px;
-      padding: 1em;
-      text-decoration: none;
-      color: white;
+    [ng\:cloak],
+    [ng-cloak],
+    [data-ng-cloak],
+    [x-ng-cloak],
+    .ng-cloak,
+    .x-ng-cloak {
+      display: none !important;
     }
   </style>
+  <meta name="viewport" content="initial-scale=1" />
 </head>
 
 <body>
-  <nav>
-    <ul>
-      <li><a href="sample.html" target="_blank">Sample</a></li>
-      <li><a href="sample.html" target="_blank">Sample</a></li>
-    </ul>
-  </nav>
+
+  <md-toolbar md-scroll-shrink="" class="dark">
+    <div class="md-toolbar-tools">
+      <div class="md-title-icon"><i></i></div>
+      <h3>
+        <span>Angular 2 First Look</span>
+      </h3>
+      <span flex=""></span>
+      <div class="md-title-links">
+        <md-button class="md-accent md-hue-1 md-title-button">Angular 2</md-button>
+        <md-button class="md-accent md-hue-1 md-title-button">John Papa</md-button>
+      </div>
+    </div>
+  </md-toolbar>
+
+
+  <md-card>
+    <md-toolbar class="md-primary md-hue-0 card-title">
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">Components</span>
+        </md-card-title-text>
+      </md-card-title>
+    </md-toolbar>
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-subhead">Components are wicked cool, let's go create one.</span>
+      </md-card-title-text>
+      <!--<md-card-title-media>
+        <div class="md-media-sm card-media"></div>
+      </md-card-title-media>-->
+    </md-card-title>
+    <md-card-actions layout="row" layout-align="end center">
+      <md-button class="md-accent md-raised">View Sample</md-button>
+
+    </md-card-actions>
+  </md-card>
+  <md-card>
+    <md-toolbar class="md-primary md-hue-0">
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">Components</span>
+        </md-card-title-text>
+      </md-card-title>
+    </md-toolbar>
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-subhead">Components are wicked cool, let's go create one.</span>
+      </md-card-title-text>
+      <!--<md-card-title-media>
+        <div class="md-media-sm card-media"></div>
+      </md-card-title-media>-->
+    </md-card-title>
+    <md-card-actions layout="row" layout-align="end center">
+      <md-button class="md-accent md-raised">View Sample</md-button>
+
+    </md-card-actions>
+  </md-card>
+  <md-card>
+    <md-toolbar class="md-primary md-hue-0">
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">Components</span>
+        </md-card-title-text>
+      </md-card-title>
+    </md-toolbar>
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-subhead">Components are wicked cool, let's go create one.</span>
+      </md-card-title-text>
+      <!--<md-card-title-media>
+        <div class="md-media-sm card-media"></div>
+      </md-card-title-media>-->
+    </md-card-title>
+    <md-card-actions layout="row" layout-align="end center">
+      <md-button class="md-accent md-raised">View Sample</md-button>
+
+    </md-card-actions>
+  </md-card>
+
+
+  <md-card>
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">Templates</span>
+        <span class="md-subhead">Templates are wicked cool, let's go create one.</span>
+      </md-card-title-text>
+      <md-card-title-media>
+        <div class="md-media-sm card-media"></div>
+      </md-card-title-media>
+    </md-card-title>
+    <md-card-actions layout="row" layout-align="end center">
+      <md-button class="md-accent">View Sample</md-button>
+
+    </md-card-actions>
+  </md-card>
+
+
+  <script src="./bower_components/angular/angular.js"></script>
+  <script src="./bower_components/angular-animate/angular-animate.js"></script>
+  <script src="./bower_components/angular-aria/angular-aria.js"></script>
+  <script type="text/javascript" src="./bower_components/angular-material/angular-material.js"></script>
+
+  <script type="text/javascript">
+    angular
+              .module('starterApp', ['ngMaterial'])
+              .config(function($mdThemingProvider, $mdIconProvider){
+
+                $mdThemingProvider.theme('default')
+                  .primaryPalette('deep-orange')
+                  .accentPalette('pink')
+                  .warnPalette('red');
+
+                  $mdIconProvider
+                      .defaultIconSet("./assets/svg/avatars.svg", 128)
+                      .icon("menu"       , "./assets/svg/menu.svg"        , 24)
+                      .icon("share"      , "./assets/svg/share.svg"       , 24)
+                      .icon("google_plus", "./assets/svg/google_plus.svg" , 512)
+                      .icon("hangouts"   , "./assets/svg/hangouts.svg"    , 512)
+                      .icon("twitter"    , "./assets/svg/twitter.svg"     , 512)
+                      .icon("phone"      , "./assets/svg/phone.svg"       , 512);
+
+                      // $mdThemingProvider.theme('default')
+                      //     .primaryPalette('brown')
+                      //     .accentPalette('red');
+
+              });
+  </script>
 
 </body>
 
