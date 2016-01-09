@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="app" ng-cloak>
+<html lang="en" ng-app="a2firstlook" ng-cloak>
 
 <head>
   <title>Angular 2 First Look</title>
@@ -21,9 +21,9 @@
   <meta name="viewport" content="initial-scale=1" />
 </head>
 
-<body ng-controller="IndexController as vm">
+<body ng-controller="CardController as vm">
 
-  <md-toolbar md-scroll-shrink="" class="dark">
+  <md-toolbar md-scroll-shrink class="dark">
     <div class="md-toolbar-tools">
       <a class="md-title-icon" ng-href="http://pluralsight.com" target="_blank"><i></i></a>
       <h3>
@@ -38,57 +38,21 @@
   </md-toolbar>
 
   <md-content flex="">
-    <md-card>
+    <md-card ng-repeat="card in vm.cards">
       <md-toolbar class="md-primary md-hue-0 card-title">
         <md-card-title>
           <md-card-title-text>
-            <span class="md-headline">Components</span>
+            <span class="md-headline">{{card.id}}. {{card.title}}</span>
           </md-card-title-text>
         </md-card-title>
       </md-toolbar>
       <md-card-title>
         <md-card-title-text>
-          <span class="md-subhead">Components are wicked cool, let's go create one.</span>
+          <span class="md-subhead">{{card.summary}}</span>
         </md-card-title-text>
         <!--<md-card-title-media>
           <div class="md-media-sm card-media"></div>
         </md-card-title-media>-->
-      </md-card-title>
-      <md-card-actions layout="row" layout-align="end center">
-        <md-button class="md-accent md-raised">
-          <a ng-href="examples/sample.html" target="_blank">View Sample</a></md-button>
-      </md-card-actions>
-    </md-card>
-    <md-card>
-      <md-toolbar class="md-primary md-hue-0">
-        <md-card-title>
-          <md-card-title-text>
-            <span class="md-headline">Templates</span>
-          </md-card-title-text>
-        </md-card-title>
-      </md-toolbar>
-      <md-card-title>
-        <md-card-title-text>
-          <span class="md-subhead">Templates are wicked cool, let's go create one.</span>
-        </md-card-title-text>
-      </md-card-title>
-      <md-card-actions layout="row" layout-align="end center">
-        <md-button class="md-accent md-raised">
-          <a ng-href="examples/sample.html" target="_blank">View Sample</a></md-button>
-      </md-card-actions>
-    </md-card>
-    <md-card>
-      <md-toolbar class="md-primary md-hue-0">
-        <md-card-title>
-          <md-card-title-text>
-            <span class="md-headline">Data Bindings</span>
-          </md-card-title-text>
-        </md-card-title>
-      </md-toolbar>
-      <md-card-title>
-        <md-card-title-text>
-          <span class="md-subhead">Data binding is fun, let's explore.</span>
-        </md-card-title-text>
       </md-card-title>
       <md-card-actions layout="row" layout-align="end center">
         <md-button class="md-accent md-raised">
@@ -100,26 +64,9 @@
   <script src="assets/angular.min.js"></script>
   <script src="assets/angular-animate.min.js"></script>
   <script src="assets/angular-aria.min.js"></script>
-  <script type="text/javascript" src="assets/angular-material.min.js"></script>
-
-  <script type="text/javascript">
-    angular
-      .module('app', ['ngMaterial'])
-      .config(function($mdThemingProvider, $mdIconProvider){
-
-        $mdThemingProvider.theme('default')
-          .primaryPalette('deep-orange')
-          .accentPalette('pink')
-          .warnPalette('red');
-      })
-      .controller('IndexController', IndexController);
-
-      IndexController.$inject = [];
-
-      function IndexController() {
-        var vm = this;
-      }
-  </script>
+  <script src="assets/angular-material.min.js"></script>
+  <script src="a2firstlook.module.js"></script>
+  <script src="card.controller.js"></script>
 
 </body>
 
