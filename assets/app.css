@@ -27,11 +27,10 @@ md-card {
 }
 
 md-card md-card-title {
-  padding: 4px 12px;
+  padding: 8px 12px;
 }
 
 md-toolbar.card-title {
-  height: 32px;
   min-height: 32px;
 }
 
