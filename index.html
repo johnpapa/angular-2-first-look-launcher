@@ -30,7 +30,7 @@
   <meta name="viewport" content="initial-scale=1" />
 </head>
 
-<body>
+<body ng-controller="IndexController as vm">
 
   <md-toolbar md-scroll-shrink="" class="dark">
     <div class="md-toolbar-tools">
@@ -40,8 +40,8 @@
       </h3>
       <span flex=""></span>
       <div class="md-title-links">
-        <md-button class="md-accent md-hue-1 md-title-button">Angular 2</md-button>
-        <md-button class="md-accent md-hue-1 md-title-button">John Papa</md-button>
+        <md-button class="md-accent md-hue-1 md-title-button"><a ng-href="http://angular.io" target="_blank">Angular 2</a></md-button>
+        <md-button class="md-accent md-hue-1 md-title-button"><a ng-href="http://johnpapa.net" target="_blank">John Papa</a></md-button>
       </div>
     </div>
   </md-toolbar>
@@ -64,8 +64,8 @@
       </md-card-title-media>-->
     </md-card-title>
     <md-card-actions layout="row" layout-align="end center">
-      <md-button class="md-accent md-raised">View Sample</md-button>
-
+      <md-button class="md-accent md-raised">
+        <a ng-href="examples/sample.html" target="_blank">View Sample</a></md-button>
     </md-card-actions>
   </md-card>
   <md-card>
@@ -82,8 +82,8 @@
       </md-card-title-text>
     </md-card-title>
     <md-card-actions layout="row" layout-align="end center">
-      <md-button class="md-accent md-raised">View Sample</md-button>
-
+      <md-button class="md-accent md-raised">
+        <a ng-href="examples/sample.html" target="_blank">View Sample</a></md-button>
     </md-card-actions>
   </md-card>
   <md-card>
@@ -100,8 +100,8 @@
       </md-card-title-text>
     </md-card-title>
     <md-card-actions layout="row" layout-align="end center">
-      <md-button class="md-accent md-raised">View Sample</md-button>
-
+      <md-button class="md-accent md-raised">
+        <a ng-href="examples/sample.html" target="_blank">View Sample</a></md-button>
     </md-card-actions>
   </md-card>
 
@@ -119,7 +119,18 @@
           .primaryPalette('deep-orange')
           .accentPalette('pink')
           .warnPalette('red');
-      });
+      })
+      .controller('IndexController', IndexController);
+
+      IndexController.$inject = ['$window'];
+
+      function IndexController($window) {
+        var vm = this;
+
+        vm.linkTo = function (path) {
+          $window.location.href = path;
+        }
+      }
   </script>
 
 </body>
