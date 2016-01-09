@@ -7,9 +7,6 @@ html, body {
 }
 
 /*Custom Styles*/
-.md-title-button, .md-title-button > a {
-  color: rgb(255, 128, 171);
-}
 a {
   color: inherit;
   text-decoration: none;
