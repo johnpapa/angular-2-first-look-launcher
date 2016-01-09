@@ -15,6 +15,14 @@ a {
 .md-headline {
   font-size: 20px;
 }
+md-content {
+  margin: 8px auto !important;
+  width: 92%;
+}
+
+md-card {
+  margin: 16px 8px !important;
+}
 
 md-card md-card-title {
   padding: 8px 12px;
@@ -34,6 +42,7 @@ md-toolbar.dark {
   background-position: center center;
   padding: 1em 2em;
 }
+/*End Custom Styles*/
 
 
 /* Toolbar area */
