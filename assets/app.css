@@ -14,7 +14,7 @@ a {
 }
 
 .md-headline {
-  font-size: 20px;
+  font-size: 16px;
 }
 md-content {
   margin: 2em auto !important;
@@ -27,11 +27,12 @@ md-card {
 }
 
 md-card md-card-title {
-  padding: 8px 12px;
+  padding: 4px 12px;
 }
 
 md-toolbar.card-title {
-  min-height: 40px;
+  height: 32px;
+  min-height: 32px;
 }
 
 md-toolbar.dark {
