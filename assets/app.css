@@ -38,6 +38,7 @@ md-toolbar.dark {
   position:fixed !important;
   background-color: #222 !important;
   top: 0;
+  z-index: 99999;
 }
 
 .md-title-icon > i {
