@@ -1,1 +1,1 @@
-# angular-first-look
+# angular2-first-look

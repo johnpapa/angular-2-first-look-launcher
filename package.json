@@ -1,5 +1,5 @@
 {
-  "name": "angular-first-look",
+  "name": "angular2-first-look",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,15 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/johnpapa/angular-first-look.git"
+    "url": "git+https://github.com/johnpapa/angular2-first-look.git"
   },
   "author": "John Papa <john@johnpapa.net> (http://johnpapa.net/)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/johnpapa/angular-first-look/issues"
+    "url": "https://github.com/johnpapa/angular2-first-look/issues"
   },
-  "homepage": "https://github.com/johnpapa/angular-first-look#readme",
-  "dependencies": {
-    "material-design-lite": "^1.0.6"
-  }
+  "homepage": "https://github.com/johnpapa/angular2-first-look#readme"
 }
