@@ -45,12 +45,12 @@ export class DashboardComponent {
 		this.message = 'Hello ' + this.name + '!';
 	}
 }
-"><input type="hidden" name="files[app/character.service.ts]" value="import {  Injectable } from 'angular2/core';
-import {  Http, Response } from 'angular2/http';
-import {  Observable, Subscription } from 'rxjs';
+"><input type="hidden" name="files[app/character.service.ts]" value="import { Injectable } from 'angular2/core';
+import { Http, Response } from 'angular2/http';
+import { Observable, Subscription } from 'rxjs';
 import 'rxjs/add/operator/map';
 
-import {  Character } from './character.service';
+import { Character } from './character.service';
 
 @Injectable()
 export class CharacterService {
@@ -134,6 +134,7 @@ export interface Character {
 ]
 "><input type="hidden" name="files[app/characters.component.ts]" value="import { Component, OnInit } from 'angular2/core';
 import { Router } from 'angular2/router';
+import { Observable, Subscription } from 'rxjs';
 
 import { Character, CharacterService } from './character.service';
 
@@ -143,7 +144,7 @@ import { Character, CharacterService } from './character.service';
   styleUrls: ['app/characters.component.css']
 })
 export class CharactersComponent implements OnInit {
-  characters: Character[];
+  characters:Observable<Character[]>;
   currentCharacter: Character;
 
   constructor(private _characterService: CharacterService) { }
@@ -158,14 +159,8 @@ export class CharactersComponent implements OnInit {
 
   getCharacters() {
     this.currentCharacter = undefined;
-    this.characters = [];
 
-    this._characterService.getCharacters()
-      .subscribe((characters: Character[]) => {
-        this.characters = characters;
-      });
-
-    return this.characters;
+    return this._characterService.getCharacters();
   }
 }
 "><input type="hidden" name="files[app/characters.component.css]" value=".characters {list-style-type: none; margin-left: 1em; padding: 0; width: 14em;}
@@ -173,7 +168,7 @@ export class CharactersComponent implements OnInit {
 .characters li:hover {color: #369; background-color: #EEE; }
 "><input type="hidden" name="files[app/characters.component.html]" value="<h2>Select a Character</h2>
 <ul class=&quot;characters&quot;>
-  <li *ngFor=&quot;#character of characters&quot; (click)=&quot;onSelect(character)&quot;>
+  <li *ngFor=&quot;#character of characters | async&quot; (click)=&quot;onSelect(character)&quot;>
     <span class=&quot;badge&quot;>{{character.id}}</span> {{character.name}}
   </li>
 </ul>

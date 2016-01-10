@@ -63,7 +63,7 @@
       }, {
         id: 11,
         title: 'HTTP',
-        example: 'modules.html',
+        example: 'http.rxjs.html',
         summary: `Angular applications can connect with a web server to get or save data using HTTP.`
       }, {
         id: 12,
