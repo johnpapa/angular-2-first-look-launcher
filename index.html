@@ -37,8 +37,10 @@
     </div>
   </md-toolbar>
 
+
   <md-content flex>
-    <md-card ng-repeat="card in vm.cards" >
+    <p class="intro">The following are examples for the core fundamentals of Angular 2. Click the button to view the sample in a plunker.</p>
+    <md-card ng-repeat="card in vm.cards">
       <md-toolbar class="md-primary md-hue-0 card-title">
         <md-card-title>
           <md-card-title-text>
@@ -50,9 +52,6 @@
         <md-card-title-text>
           <span class="md-subhead">{{card.summary}}</span>
         </md-card-title-text>
-        <!--<md-card-title-media>
-          <div class="md-media-sm card-media"></div>
-        </md-card-title-media>-->
       </md-card-title>
       <md-card-actions layout="row" layout-align="end center">
         <md-button class="md-accent md-raised">
