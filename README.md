@@ -1,1 +1,11 @@
 # angular2-first-look
+
+## THERE BE DRAGONS HERE
+
+## DRAFT
+
+## In PROGRESS
+
+## I MAY DELETE THIS
+
+## PROCEED AT YOUR OWN RISK
