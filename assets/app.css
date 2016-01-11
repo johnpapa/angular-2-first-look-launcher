@@ -8,8 +8,8 @@ html, body {
 
 /*Custom Styles*/
 
-a {
-  color: inherit;
+md-toolbar a {
+  color: inherit !important;
   text-decoration: none;
 }
 
