@@ -1,184 +1,161 @@
-<html lang="en"><head></head><body><form id="mainForm" method="post" action="http://plnkr.co/edit/?p=preview" target="_self"><input type="hidden" name="files[api/data.ts]" value="export let characters = [
-  {
-    &quot;id&quot;: 11,
-    &quot;name&quot;: &quot;Chewbacca&quot;,
-    &quot;side&quot;: &quot;light&quot;
-  },
-  {
-    &quot;id&quot;: 12,
-    &quot;name&quot;: &quot;Rey&quot;,
-    &quot;side&quot;: &quot;light&quot;
-  },
-  {
-    &quot;id&quot;: 13,
-    &quot;name&quot;: &quot;Finn (FN2187)&quot;,
-    &quot;side&quot;: &quot;light&quot;
-  },
-  {
-    &quot;id&quot;: 14,
-    &quot;name&quot;: &quot;Han Solo&quot;,
-    &quot;side&quot;: &quot;light&quot;
-  },
-  {
-    &quot;id&quot;: 15,
-    &quot;name&quot;: &quot;Leia Organa&quot;,
-    &quot;side&quot;: &quot;light&quot;
-  },
-  {
-    &quot;id&quot;: 16,
-    &quot;name&quot;: &quot;Luke Skywalker&quot;,
-    &quot;side&quot;: &quot;light&quot;
-  },
-  {
-    &quot;id&quot;: 17,
-    &quot;name&quot;: &quot;Poe Dameron&quot;,
-    &quot;side&quot;: &quot;light&quot;
-  },
-  {
-    &quot;id&quot;: 18,
-    &quot;name&quot;: &quot;Kylo Ren&quot;,
-    &quot;side&quot;: &quot;dark&quot;
-  },
-  {
-    &quot;id&quot;: 19,
-    &quot;name&quot;: &quot;Supreme Commander Snoke&quot;,
-    &quot;side&quot;: &quot;dark&quot;
-  },
-  {
-    &quot;id&quot;: 20,
-    &quot;name&quot;: &quot;R2-D2&quot;,
-    &quot;side&quot;: &quot;light&quot;
-  },
-  {
-    &quot;id&quot;: 21,
-    &quot;name&quot;: &quot;BB8&quot;,
-    &quot;side&quot;: &quot;light&quot;
-  },
-  {
-    &quot;id&quot;: 22,
-    &quot;name&quot;: &quot;C-3PO&quot;,
-    &quot;side&quot;: &quot;light&quot;
-  },
-  {
-    &quot;id&quot;: 23,
-    &quot;name&quot;: &quot;Maz Kanata&quot;,
-    &quot;side&quot;: &quot;light&quot;
-  },
-  {
-    &quot;id&quot;: 24,
-    &quot;name&quot;: &quot;Captain Phasma&quot;,
-    &quot;side&quot;: &quot;dark&quot;
-  },
-  {
-    &quot;id&quot;: 25,
-    &quot;name&quot;: &quot;General Hux&quot;,
-    &quot;side&quot;: &quot;dark&quot;
-  },
-  {
-    &quot;id&quot;: 26,
-    &quot;name&quot;: &quot;Lor San Tekka&quot;,
-    &quot;side&quot;: &quot;light&quot;
-  }
-];
+<html lang="en"><head></head><body><form id="mainForm" method="post" action="http://plnkr.co/edit/?p=preview" target="_self"><input type="hidden" name="files[api/mock-story-data.service.ts]" value="import {IMockDataService} from '../mock-backend/mock-backend.service';
 
-export let vehicles = [
-  {
-    &quot;id&quot;: 30,
-    &quot;name&quot;: &quot;Millennium Falcon&quot;,
-    &quot;type&quot;: &quot;space&quot;
-  },
-  {
-    &quot;id&quot;: 32,
-    &quot;name&quot;: &quot;X-Wing Fighter&quot;,
-    &quot;type&quot;: &quot;space&quot;
-  },
-  {
-    &quot;id&quot;: 33,
-    &quot;name&quot;: &quot;Imperial Star Destroyer&quot;,
-    &quot;type&quot;: &quot;space&quot;
-  },
-  {
-    &quot;id&quot;: 34,
-    &quot;name&quot;: &quot;AT-AT Walker&quot;,
-    &quot;type&quot;: &quot;land&quot;
-  },
-  {
-    &quot;id&quot;: 35,
-    &quot;name&quot;: &quot;TIE Fighter&quot;,
-    &quot;type&quot;: &quot;space&quot;
-  },
-  {
-    &quot;id&quot;: 36,
-    &quot;name&quot;: &quot;B-Wing Fighter&quot;,
-    &quot;type&quot;: &quot;space&quot;
-  },
-  {
-    &quot;id&quot;: 37,
-    &quot;name&quot;: &quot;ETA-2 Jedi Starfighter&quot;,
-    &quot;type&quot;: &quot;space&quot;
-  },
-  {
-    &quot;id&quot;: 38,
-    &quot;name&quot;: &quot;TIE Interceptor&quot;,
-    &quot;type&quot;: &quot;space&quot;
-  },
-  {
-    &quot;id&quot;: 39,
-    &quot;name&quot;: &quot;X-34 Landspeeder&quot;,
-    &quot;type&quot;: &quot;land&quot;
-  },
-  {
-    &quot;id&quot;: 40,
-    &quot;name&quot;: &quot;Snow Speeder&quot;,
-    &quot;type&quot;: &quot;land&quot;
-  },
-  {
-    &quot;id&quot;: 41,
-    &quot;name&quot;: &quot;X-34 Landspeeder&quot;,
-    &quot;type&quot;: &quot;land&quot;
-  }
-]
-"><input type="hidden" name="files[api/mock-backend.service.ts]" value="import { Observable } from 'rxjs/Rx';
-import { Headers, Request, Response, ResponseOptions, RequestMethod } from 'angular2/http';
-import * as data from './data';
+export class MockStoryDataService implements IMockDataService {
+  /**
+  * Creates fresh copy of data each time.
+  * Safe for consuming service to morph arrays and objects.
+  */
+  createDb() { return createDb(); }
+}
 
-export class MockBackendService {
-  private _db = {
-    characters: data.characters.slice(),
-    vehicles: data.vehicles.slice()
-  };
-
-  createConnection(req: Request) {
-    let [api, path, id] = req.url.split('/');
-    let [resource] = path.split('.');
-    let collection = this._db[resource];
-    if (id) {
-      collection = this._db[resource].find((item: any) => item.id === +id);
+function createDb() {
+  let characters = [
+    {
+      &quot;id&quot;: 11,
+      &quot;name&quot;: &quot;Chewbacca&quot;,
+      &quot;side&quot;: &quot;light&quot;
+    },
+    {
+      &quot;id&quot;: 12,
+      &quot;name&quot;: &quot;Rey&quot;,
+      &quot;side&quot;: &quot;light&quot;
+    },
+    {
+      &quot;id&quot;: 13,
+      &quot;name&quot;: &quot;Finn (FN2187)&quot;,
+      &quot;side&quot;: &quot;light&quot;
+    },
+    {
+      &quot;id&quot;: 14,
+      &quot;name&quot;: &quot;Han Solo&quot;,
+      &quot;side&quot;: &quot;light&quot;
+    },
+    {
+      &quot;id&quot;: 15,
+      &quot;name&quot;: &quot;Leia Organa&quot;,
+      &quot;side&quot;: &quot;light&quot;
+    },
+    {
+      &quot;id&quot;: 16,
+      &quot;name&quot;: &quot;Luke Skywalker&quot;,
+      &quot;side&quot;: &quot;light&quot;
+    },
+    {
+      &quot;id&quot;: 17,
+      &quot;name&quot;: &quot;Poe Dameron&quot;,
+      &quot;side&quot;: &quot;light&quot;
+    },
+    {
+      &quot;id&quot;: 18,
+      &quot;name&quot;: &quot;Kylo Ren&quot;,
+      &quot;side&quot;: &quot;dark&quot;
+    },
+    {
+      &quot;id&quot;: 19,
+      &quot;name&quot;: &quot;Supreme Commander Snoke&quot;,
+      &quot;side&quot;: &quot;dark&quot;
+    },
+    {
+      &quot;id&quot;: 20,
+      &quot;name&quot;: &quot;R2-D2&quot;,
+      &quot;side&quot;: &quot;light&quot;
+    },
+    {
+      &quot;id&quot;: 21,
+      &quot;name&quot;: &quot;BB8&quot;,
+      &quot;side&quot;: &quot;light&quot;
+    },
+    {
+      &quot;id&quot;: 22,
+      &quot;name&quot;: &quot;C-3PO&quot;,
+      &quot;side&quot;: &quot;light&quot;
+    },
+    {
+      &quot;id&quot;: 23,
+      &quot;name&quot;: &quot;Maz Kanata&quot;,
+      &quot;side&quot;: &quot;light&quot;
+    },
+    {
+      &quot;id&quot;: 24,
+      &quot;name&quot;: &quot;Captain Phasma&quot;,
+      &quot;side&quot;: &quot;dark&quot;
+    },
+    {
+      &quot;id&quot;: 25,
+      &quot;name&quot;: &quot;General Hux&quot;,
+      &quot;side&quot;: &quot;dark&quot;
+    },
+    {
+      &quot;id&quot;: 26,
+      &quot;name&quot;: &quot;Lor San Tekka&quot;,
+      &quot;side&quot;: &quot;light&quot;
     }
+  ];
 
-    let options: ResponseOptions;
-    let headers = new Headers({&quot;Content-Type&quot;: &quot;application/json&quot;});
-
-    if (collection) {
-      options = new ResponseOptions({
-        body: { data: collection },
-        headers: headers,
-        status: 200
-      });
-    } else {
-      options = new ResponseOptions({
-        body: `{&quot;error&quot;: &quot;${resource} not found&quot;}`,
-        headers: headers,
-        status: 404
-      });
+  let vehicles = [
+    {
+      &quot;id&quot;: 30,
+      &quot;name&quot;: &quot;Millennium Falcon&quot;,
+      &quot;type&quot;: &quot;space&quot;
+    },
+    {
+      &quot;id&quot;: 32,
+      &quot;name&quot;: &quot;X-Wing Fighter&quot;,
+      &quot;type&quot;: &quot;space&quot;
+    },
+    {
+      &quot;id&quot;: 33,
+      &quot;name&quot;: &quot;Imperial Star Destroyer&quot;,
+      &quot;type&quot;: &quot;space&quot;
+    },
+    {
+      &quot;id&quot;: 34,
+      &quot;name&quot;: &quot;AT-AT Walker&quot;,
+      &quot;type&quot;: &quot;land&quot;
+    },
+    {
+      &quot;id&quot;: 35,
+      &quot;name&quot;: &quot;TIE Fighter&quot;,
+      &quot;type&quot;: &quot;space&quot;
+    },
+    {
+      &quot;id&quot;: 36,
+      &quot;name&quot;: &quot;B-Wing Fighter&quot;,
+      &quot;type&quot;: &quot;space&quot;
+    },
+    {
+      &quot;id&quot;: 37,
+      &quot;name&quot;: &quot;ETA-2 Jedi Starfighter&quot;,
+      &quot;type&quot;: &quot;space&quot;
+    },
+    {
+      &quot;id&quot;: 38,
+      &quot;name&quot;: &quot;TIE Interceptor&quot;,
+      &quot;type&quot;: &quot;space&quot;
+    },
+    {
+      &quot;id&quot;: 39,
+      &quot;name&quot;: &quot;X-34 Landspeeder&quot;,
+      &quot;type&quot;: &quot;land&quot;
+    },
+    {
+      &quot;id&quot;: 40,
+      &quot;name&quot;: &quot;Snow Speeder&quot;,
+      &quot;type&quot;: &quot;land&quot;
+    },
+    {
+      &quot;id&quot;: 41,
+      &quot;name&quot;: &quot;X-34 Landspeeder&quot;,
+      &quot;type&quot;: &quot;land&quot;
     }
+  ]
 
-    return { response: Observable.of(new Response(options)) };
-  }
+  return { characters, vehicles };
 }
 "><input type="hidden" name="files[app/app.component.ts]" value="import { Component, provide } from 'angular2/core';
 import { HTTP_PROVIDERS, XHRBackend } from 'angular2/http';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
+import 'rxjs/Rx'; // load the full rxjs
 
 import { VehiclesDashboardComponent } from './vehicles/vehicles-dashboard.component';
 import { CharactersDashboardComponent } from './characters/characters-dashboard.component';
@@ -186,7 +163,10 @@ import { CharacterService } from './characters/character.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ModalService } from './blocks/modal/modal.service'
 import { ModalComponent } from './blocks/modal/modal.component';
-import { MockBackendService } from '../api/mock-backend.service';
+import { MockBackendService, MOCK_DATA } from '../mock-backend/mock-backend.service';
+import { MockStoryDataService } from '../api/mock-story-data.service';
+import { MessageService } from './shared/message.service';
+import { SpinnerService } from './shared/spinner.service';
 
 @Component({
   selector: 'taba-app',
@@ -195,14 +175,15 @@ import { MockBackendService } from '../api/mock-backend.service';
   directives: [ROUTER_DIRECTIVES, ModalComponent],
   providers: [
     HTTP_PROVIDERS,
-    provide(XHRBackend, {useClass: MockBackendService}),
-    ROUTER_PROVIDERS, CharacterService, ModalService
+    provide(XHRBackend, { useClass: MockBackendService }),
+    provide(MOCK_DATA, { useClass: MockStoryDataService }),
+    ROUTER_PROVIDERS, CharacterService, MessageService, ModalService, SpinnerService
   ]
 })
 @RouteConfig([
   { path: '/dashboard', name: 'Dashboard', component: DashboardComponent, useAsDefault: true },
   { path: '/vehicles/...', name: 'Vehicles', component: VehiclesDashboardComponent },
-	{ path: '/characters/...', name: 'CharactersDashboard', component: CharactersDashboardComponent	},
+  { path: '/characters/...', name: 'CharactersDashboard', component: CharactersDashboardComponent },
 ])
 export class AppComponent {
   public menuItems = [
@@ -210,27 +191,29 @@ export class AppComponent {
     { caption: 'Characters', link: ['CharactersDashboard'] },
     { caption: 'Vehicles', link: ['Vehicles'] }
   ];
+
+  constructor(mockBackendService: XHRBackend,
+    private _messageService: MessageService,
+    private _modalService: ModalService) {
+    mockBackendService['delay'] = 500; // ms response delay
+  }
+
+  resetDb() {
+    let msg = 'Are you sure you want to reset the database?';
+    this._modalService.activate(msg).then((responseOK) => {
+      if (responseOK) { this._messageService.resetDb(); }
+    });
+  }
 }
-"><input type="hidden" name="files[app/blocks/filter-text.component.ts]" value="import { Component, EventEmitter } from 'angular2/core';
+"><input type="hidden" name="files[app/blocks/filter-text.component.ts]" value="import { Component, EventEmitter, Output } from 'angular2/core';
 
 @Component({
   selector: 'filter-text',
-  outputs: ['changed'],
-  template: `
-    <form>
-      <div class=&quot;mdl-textfield mdl-js-textfield mdl-textfield--floating-label&quot;>
-        <label class=&quot;mdl-textfield__label&quot; for=&quot;filterText&quot;>Filter...</label>
-         <input type=&quot;text&quot; id=&quot;filterText&quot;
-                class=&quot;mdl-textfield__input&quot;
-                [(ngModel)]=&quot;filter&quot;
-                (keyup)=&quot;filterChanged($event)&quot; />
-      </div>
-    </form>
-  `
+  templateUrl: 'app/blocks/filter-text.component.html'
 })
 export class FilterTextComponent {
   filter: string;
-  changed: EventEmitter<string>;
+  @Output() changed: EventEmitter<string>;
 
   constructor() {
     this.changed = new EventEmitter();
@@ -241,7 +224,7 @@ export class FilterTextComponent {
   filterChanged(event: any) {
     event.preventDefault();
     console.log(`Filter Changed: ${this.filter}`);
-    this.changed.next(this.filter);
+    this.changed.emit(this.filter);
   }
 }"><input type="hidden" name="files[app/blocks/filter.service.ts]" value="export class FilterService {
 	constructor() { }
@@ -273,10 +256,10 @@ export class FilterTextComponent {
 export class InitCapsPipe implements PipeTransform {
   transform(value: string, args: any[]) {
     return value
-        .toLowerCase()
-        .replace(/(?:^|\s)[a-z]/g, function(m) {
-      return m.toUpperCase();
-    });
+      .toLowerCase()
+      .replace(/(?:^|\s)[a-z]/g, function(m) {
+        return m.toUpperCase();
+      });
   }
 }
 
@@ -292,6 +275,12 @@ const KEY_ESC = 27;
   styleUrls: ['app/blocks/modal/modal.component.css']
 })
 export class ModalComponent implements OnInit {
+  private _defaults = {
+    title: 'Confirmation',
+    message: 'Do you want to cancel your changes?',
+    cancelText: 'Cancel',
+    okText: 'OK'
+  };
   title: string;
   message: string;
   okText: string;
@@ -307,28 +296,28 @@ export class ModalComponent implements OnInit {
     this._modalService.activate = this.activate.bind(this);
   }
 
+  activate(message = this._defaults.message, title = this._defaults.title) {
+    this.title = title;
+    this.message = message;
+    this.okText = this._defaults.okText;
+    this.cancelText = this._defaults.cancelText;
+
+    let promise = new Promise<boolean>((resolve, reject) => {
+      this.negativeOnClick = (e: any) => resolve(false);
+      this.positiveOnClick = (e: any) => resolve(true);
+      this._show();
+    });
+
+    return promise;
+  }
+
   ngOnInit() {
     this._modalElement = document.getElementById('confirmationModal');
     this._cancelButton = document.getElementById('cancelButton');
     this._okButton = document.getElementById('okButton');
   }
 
-  activate() {
-    this.title = this._modalService.title;
-    this.message = this._modalService.message;
-    this.okText = this._modalService.okText;
-    this.cancelText = this._modalService.cancelText;
-
-    let promise = new Promise<boolean>((resolve, reject) => {
-      this.negativeOnClick = (e: any) => resolve(false);
-      this.positiveOnClick = (e: any) => resolve(true);
-      this.show();
-    });
-
-    return promise;
-  }
-
-  private show() {
+  private _show() {
     document.onkeyup = null;
 
     this._modalElement.style.opacity = 0;
@@ -336,24 +325,22 @@ export class ModalComponent implements OnInit {
 
     this._cancelButton.onclick = ((e: any) => {
       e.preventDefault();
-      if (!this.negativeOnClick(e)) this.hideDialog()
+      if (!this.negativeOnClick(e)) this._hideDialog()
     });
 
     this._okButton.onclick = ((e: any) => {
       e.preventDefault();
-      if (!this.positiveOnClick(e)) this.hideDialog()
+      if (!this.positiveOnClick(e)) this._hideDialog()
     });
 
-    componentHandler.upgradeDom();
-
     this._modalElement.onclick = () => {
-      this.hideDialog();
+      this._hideDialog();
       return this.negativeOnClick(null);
     };
 
     document.onkeyup = (e: any) => {
       if (e.which == KEY_ESC) {
-        this.hideDialog();
+        this._hideDialog();
         return this.negativeOnClick(null);
       }
     };
@@ -361,7 +348,7 @@ export class ModalComponent implements OnInit {
     this._modalElement.style.opacity = 1;
   }
 
-  private hideDialog() {
+  private _hideDialog() {
     document.onkeyup = null;
     this._modalElement.style.opacity = 0;
     window.setTimeout(() => { this._modalElement.style.zIndex = 0; }, 400);
@@ -371,11 +358,7 @@ export class ModalComponent implements OnInit {
 
 @Injectable()
 export class ModalService {
-  title: string = 'Confirmation';
-  message: string = 'Do you want to cancel your changes?';
-  cancelText: string = 'Cancel';
-  okText: string = 'OK';
-  activate: () => Promise<boolean>;
+  activate: (message?: string, title?: string) => Promise<boolean>;
 }
 "><input type="hidden" name="files[app/boot.ts]" value="import { bootstrap } from 'angular2/platform/browser';
 import { AppComponent } from './app.component';
@@ -383,11 +366,13 @@ import { AppComponent } from './app.component';
 bootstrap(AppComponent, [])
   .then(success => console.log(`Bootstrap success`))
   .catch(error => console.log(error));
-"><input type="hidden" name="files[app/characters/character-detail.component.ts]" value="import { Component, Input, OnChanges, OnInit } from 'angular2/core';
+"><input type="hidden" name="files[app/characters/character-detail.component.ts]" value="import { Component, Input, OnChanges, OnDestroy, OnInit } from 'angular2/core';
 import { CanDeactivate, ComponentInstruction, RouteParams, Router, ROUTER_DIRECTIVES } from 'angular2/router';
+import { Subscription } from 'rxjs/Rx';
 
 import { Character, CharacterService } from '../characters/character.service';
 import { ModalService } from '../blocks/modal/modal.service';
+import { SpinnerService } from '../shared/spinner.service';
 
 @Component({
   selector: 'taba-character-detail',
@@ -395,33 +380,20 @@ import { ModalService } from '../blocks/modal/modal.service';
   styles: ['.mdl-textfield__label {top: 0;}'],
   directives: [ROUTER_DIRECTIVES]
 })
-export class CharacterDetailComponent implements CanDeactivate, OnChanges, OnInit {
-  @Input()
-  character: Character;
+export class CharacterDetailComponent implements CanDeactivate, OnChanges, OnDestroy, OnInit {
+  private _resetSubject: Subscription<any>;
+
+  @Input() character: Character;
   editName: string;
   editSide: string;
 
   constructor(
     private _characterService: CharacterService,
     private _modalService: ModalService,
-    private _routeParams: RouteParams,
+    private _spinnerService: SpinnerService, private _routeParams: RouteParams,
     private _router: Router) {
-  }
-
-  gotoCharacters() {
-    let route = ['Characters', { id: this.character ? this.character.id : null }]
-    this._router.navigate(route);
-  }
-
-  routerCanDeactivate(next: ComponentInstruction, prev: ComponentInstruction) {
-    return !this.character ||
-      !this.isDirty() ||
-      this._modalService.activate();
-  }
-
-  isDirty() {
-    return this.character.name !== this.editName ||
-      this.character.side !== this.editSide;
+    this._resetSubject = this._characterService.onDbReset
+      .subscribe(() => this._getCharacter());
   }
 
   cancel() {
@@ -430,28 +402,76 @@ export class CharacterDetailComponent implements CanDeactivate, OnChanges, OnIni
     this.gotoCharacters();
   }
 
-  save() {
-    this.character.name = this.editName;
-    this.character.side = this.editSide;
-    this.gotoCharacters();
+  delete() {
+    let msg = 'Do you want to delete this character?';
+    this._modalService.activate(msg).then((responseOK) => {
+      if (responseOK) {
+        this._characterService.deleteCharacter(this.character)
+          .subscribe(
+          () => this.gotoCharacters(), // Success path
+          (err) => this._handleServiceError('Delete', err), // Failure path
+          () => console.log('Delete Completed') // Completed actions
+          );
+      }
+    });
+  }
+
+  gotoCharacters() {
+    let route = ['Characters', { id: this.character ? this.character.id : null }]
+    this._router.navigate(route);
+  }
+
+  isDirty() {
+    return this.character.name !== this.editName ||
+      this.character.side !== this.editSide;
   }
 
   ngOnChanges(changes: any) {
     console.log(changes);
   }
 
+  ngOnDestroy() {
+    this._resetSubject.unsubscribe();
+  }
+
   ngOnInit() {
     componentHandler.upgradeDom();
+    this._getCharacter();
+  }
 
+  routerCanDeactivate(next: ComponentInstruction, prev: ComponentInstruction) {
+    return !this.character ||
+      !this.isDirty() ||
+      this._modalService.activate();
+  }
+
+  save() {
+    this.character.name = this.editName;
+    this.character.side = this.editSide;
+    this._characterService.updateCharacter(this.character)
+      .subscribe(
+      () => this.gotoCharacters(), // Success path
+      (err) => this._handleServiceError('Save', err), // Failure path
+      () => console.log('Save Completed') // Completed actions
+      );
+  }
+
+  private _getCharacter() {
     if (!this.character) {
       let id = +this._routeParams.get('id');
-
-      this._characterService.getCharacter(id)
-        .subscribe((character: Character) => { this.setCharacter(character) });
+      this._spinnerService.show(); this._characterService.getCharacter(id)
+        .subscribe((character: Character) => {
+          this._setCharacter(character);
+          this._spinnerService.hide();
+        });
     }
   }
 
-  private setCharacter(character: Character) {
+  private _handleServiceError(op: string, err: any) {
+    console.error(`${op} error: ${err.message || err}`);
+  }
+
+  private _setCharacter(character: Character) {
     if (character) {
       this.editName = character.name;
       this.editSide = character.side;
@@ -462,12 +482,10 @@ export class CharacterDetailComponent implements CanDeactivate, OnChanges, OnIni
   }
 }
 "><input type="hidden" name="files[app/characters/character.service.ts]" value="import { Injectable } from 'angular2/core';
-import { Http, Response } from 'angular2/http';
-import { Subscription } from 'rxjs'; //Observable
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/toPromise';
-import { CONFIG } from '../config';
+import { Http, Response, RequestMethod } from 'angular2/http';
+import { Observable } from 'rxjs/Rx';
+import { CONFIG } from '../shared/config';
+import { MessageService } from '../shared/message.service';
 
 let baseUrls = CONFIG.baseUrls;
 
@@ -479,56 +497,55 @@ export interface Character {
 
 @Injectable()
 export class CharacterService {
-  subscription: Subscription<Character>;
+  constructor(private _http: Http, private _messageService: MessageService) {
+    this._subscribeToOnDbReset();
+  }
 
-  constructor(private _http: Http) { }
-
-  getCharacters_ViaPromise() {
-    let promise = this._http.get(baseUrls.characters)
-      .map((response: Response) => <Character[]>response.json().data)
-      .toPromise()
-      .catch(fetchFailed);
-
-    return promise;
+  deleteCharacter(character: Character) {
+    let result = this._http
+      .delete(`${baseUrls.characters}/${character.id}`)
+      .map(this._catchBadResponse);
+    return result;
   }
 
   getCharacters() {
-    let observable = this._http.get(baseUrls.characters)
-      .map((response: Response) => <Character[]>response.json().data)
-
-      // TODO: learning moment.
-      // if i want to subscribe here and do something with the data, or handle errors.
-      // i capture the subscription in case i want to kill it later.
-      // this does cause a 2nd http call (each subscribe does).
-      //  ex: this.subscription.unsubscribe()
-      // this.subscription = observable.subscribe(
-      //   null, //characters => characters, // Success path
-      //   err => (err: any) => console.error('There was an error: ' + err), // Failure path
-      //   () => console.log('getCharacters Completed') // Completed actions
-      // );
-
-      // This let's us do something with the data
-      // and also handle an error without calling http again
-      .do(data => (characters: Character[]) => {
-        // do something
-        var temp = characters;
-      })
-
-    return observable;
+    return this._http.get(baseUrls.characters)
+      .map((response: Response) => <Character[]>response.json().data);
   }
 
   getCharacter(id: number) {
     return this._http.get(`${baseUrls.characters}/${id}`)
       .map((response: Response) => response.json().data);
   }
-}
 
-function fetchFailed(error: any) {
-  //TODO: dont use console here
-  console.error(error);
-  return Promise.reject(error);
+  onDbReset = this._messageService.state;
+
+  updateCharacter(character: Character) {
+    let body = JSON.stringify(character);
+
+    let result = this._http
+      .put(`${baseUrls.characters}/${character.id}`, body)
+      .map(this._catchBadResponse);
+    return result;
+  }
+
+  private _catchBadResponse(res: Response) {
+    if (res.status < 200 || res.status >= 300) {
+      let data = res.json();
+      let emsg = data.error ? data.error : JSON.stringify(data);
+      throw new Error(emsg);
+    }
+    return res;
+  }
+
+  private _subscribeToOnDbReset() {
+    this._messageService.state.subscribe(state => {
+      console.log('data refresh received in character service', state);
+      this.getCharacters();
+    });
+  }
 }
-"><input type="hidden" name="files[app/characters/characters-dashboard.component.ts]" value="import { Component, OnInit } from 'angular2/core';
+"><input type="hidden" name="files[app/characters/characters-dashboard.component.ts]" value="import { Component } from 'angular2/core';
 import { RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router';
 
 import { CharactersComponent } from './characters.component';
@@ -547,18 +564,17 @@ import { CharacterService } from './character.service';
 	{ path: '/list/:id', name: 'Characters', component: CharactersComponent	},
 	{ path: '/:id', name: 'CharacterDetail', component: CharacterDetailComponent }
 ])
-export class CharactersDashboardComponent implements OnInit {
-  constructor() { }
-  ngOnInit() { }
+export class CharactersDashboardComponent {
 }
-"><input type="hidden" name="files[app/characters/characters.component.ts]" value="import { Component, OnInit } from 'angular2/core';
+"><input type="hidden" name="files[app/characters/characters.component.ts]" value="import { Component, OnDestroy, OnInit } from 'angular2/core';
 import { ROUTER_DIRECTIVES } from 'angular2/router';
+import { Subscription } from 'rxjs/Rx';
 
 import { Character, CharacterService } from './character.service';
 import { FilterService } from '../blocks/filter.service';
 import { FilterTextComponent } from '../blocks/filter-text.component';
 import { SortCharactersPipe } from './sort-characters.pipe'
-import { CONFIG } from '../config';
+import { SpinnerService } from '../shared/spinner.service';
 
 @Component({
   selector: 'taba-characters',
@@ -568,41 +584,44 @@ import { CONFIG } from '../config';
   pipes: [SortCharactersPipe],
   providers: [FilterService]
 })
-export class CharactersComponent implements OnInit {
+export class CharactersComponent implements OnDestroy, OnInit {
+  private _resetSubject: Subscription<any>;
+
   characters: Character[];
   filteredCharacters = this.characters;
   filterText = '';
 
   constructor(
     private _filterService: FilterService,
+    private _spinnerService: SpinnerService,
     private _characterService: CharacterService) {
+
+    this._resetSubject = this._characterService.onDbReset
+      .subscribe(() => this.getCharacters());
+  }
+
+  filterChanged(searchText: string) {
+    this.filteredCharacters = this._filterService.filter(searchText, ['id', 'name', 'side'], this.characters);
   }
 
   getCharacters() {
     this.characters = [];
 
-    if (CONFIG.useHttpWithRx) {
-      this._characterService.getCharacters()
-        .subscribe((characters: Character[]) => {
-          this.characters = this.filteredCharacters = characters
-        });
-    } else {
-      this._characterService.getCharacters_ViaPromise()
-        .then((characters: Character[]) => {
-          this.characters = this.filteredCharacters = characters
-        });
-    }
+    this._spinnerService.show();
+    this._characterService.getCharacters()
+      .subscribe((characters) => {
+        this.characters = this.filteredCharacters = characters;
+        this._spinnerService.hide();
+      });
+  }
 
-    return this.characters;
+  ngOnDestroy() {
+    this._resetSubject.unsubscribe();
   }
 
   ngOnInit() {
     componentHandler.upgradeDom();
-    this.characters = this.getCharacters();
-  }
-
-  filterChanged(searchText: string) {
-    this.filteredCharacters = this._filterService.filter(searchText, ['id', 'name', 'side'], this.characters);
+    this.getCharacters();
   }
 }
 "><input type="hidden" name="files[app/characters/sort-characters.pipe.ts]" value="import { Pipe, PipeTransform } from 'angular2/core';
@@ -619,58 +638,107 @@ export class SortCharactersPipe implements PipeTransform {
       return 0;
     });
   }
-}"><input type="hidden" name="files[app/config.ts]" value="export let CONFIG = {
-  useHttpWithRx: true,
-  baseUrls: {
-    characters: 'api/characters.json',
-    vehicles: 'api/vehicles.json'
-  }
-}
-"><input type="hidden" name="files[app/dashboard/dashboard.component.ts]" value="import { Component, OnInit } from 'angular2/core';
+}"><input type="hidden" name="files[app/dashboard/dashboard.component.ts]" value="import { Component, OnDestroy, OnInit } from 'angular2/core';
 import { Router } from 'angular2/router';
+import { XHRBackend } from 'angular2/http';
+import { Subscription } from 'rxjs/Rx';
+
 import { Character, CharacterService } from '../characters/character.service';
-import { CONFIG } from '../config';
+import { SpinnerService } from '../shared/spinner.service';
 
 @Component({
   selector: 'my-dashboard',
   templateUrl: 'app/dashboard/dashboard.component.html',
   styleUrls: ['app/dashboard/dashboard.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnDestroy, OnInit {
+  private _resetSubject: Subscription<any>;
+
   characters: Character[];
 
-  constructor(private _characterService: CharacterService, private _router: Router) { }
-
-  ngOnInit() {
-    this.characters = this.getCharacters();
-  }
-
-  gotoDetail(character: Character) {
-    this._router.navigate(['CharactersDashboard', 'CharacterDetail', { id: character.id }]);
+  constructor(
+    private _characterService: CharacterService,
+    private _spinnerService: SpinnerService,
+    private _router: Router) {
+    this._resetSubject = this._characterService.onDbReset
+      .subscribe(() => this.getCharacters());
   }
 
   getCharacters() {
     this.characters = [];
+    this._spinnerService.show();
+    this._characterService.getCharacters()
+      .subscribe((characters: Character[]) => {
+        this.characters = characters.slice(0, 16);
+        this._spinnerService.hide();
+      });
+  }
 
-    if (CONFIG.useHttpWithRx) {
-      this._characterService.getCharacters()
-        .subscribe((characters: Character[]) => {
-          this.characters = characters.slice(0, 16);
-        });
-    } else {
-      this._characterService.getCharacters_ViaPromise()
-        .then((characters: Character[]) => this.characters = characters.slice(0, 16));
-    }
+  gotoDetail(character: Character) {
+    let link = ['CharactersDashboard', 'CharacterDetail', { id: character.id }];
+    this._router.navigate(link);
+  }
 
-    return this.characters;
+  ngOnDestroy() {
+    this._resetSubject.unsubscribe();
+  }
+
+  ngOnInit() {
+    this.getCharacters();
   }
 }
-"><input type="hidden" name="files[app/vehicles/vehicle-detail.component.ts]" value="import { Component, Input, OnChanges, OnInit } from 'angular2/core';
+"><input type="hidden" name="files[app/shared/config.ts]" value="export let CONFIG = {
+  useHttpWithRx: true,
+  baseUrls: {
+    resetDb: 'api/resetDb',
+    characters: 'api/characters.json',
+    vehicles: 'api/vehicles.json'
+  }
+}
+"><input type="hidden" name="files[app/shared/message.service.ts]" value="import { Injectable } from 'angular2/core';
+import { Http, Response } from 'angular2/http';
+import { Subject } from 'rxjs/Rx';
+import { CONFIG } from './config';
+
+@Injectable()
+export class MessageService {
+  state = new Subject();
+
+  constructor(private _http: Http) { }
+
+  resetDb() {
+    console.log('Resetting the database');
+    this._http.get(CONFIG.baseUrls.resetDb);
+    this.state.next({ message: 'It was refreshed. No fooling.' });
+  }
+}
+"><input type="hidden" name="files[app/shared/spinner.service.ts]" value="import {Injectable} from 'angular2/core';
+
+const ACTIVE_CLASS = 'is-active';
+
+@Injectable()
+export class SpinnerService {
+  private _element: HTMLElement;
+
+  constructor() {
+    this._element = document.getElementById('spinner');
+  }
+
+  show() {
+    componentHandler.upgradeDom();
+    this._element.classList.add(ACTIVE_CLASS);
+  }
+
+  hide() {
+    this._element.classList.remove(ACTIVE_CLASS);
+  }
+}"><input type="hidden" name="files[app/vehicles/vehicle-detail.component.ts]" value="import { Component, Input, OnChanges, OnDestroy, OnInit } from 'angular2/core';
 import { CanDeactivate, ComponentInstruction, RouteParams, Router, ROUTER_DIRECTIVES } from 'angular2/router';
+import { Subscription } from 'rxjs/Rx';
 
 import { Vehicle, VehicleService } from '../vehicles/vehicle.service';
-import { CONFIG } from '../config';
 import { ModalService } from '../blocks/modal/modal.service';
+import { SpinnerService } from '../shared/spinner.service';
 
 @Component({
   selector: 'taba-vehicle-detail',
@@ -678,9 +746,10 @@ import { ModalService } from '../blocks/modal/modal.service';
   styles: ['.mdl-textfield__label {top: 0;}'],
   directives: [ROUTER_DIRECTIVES]
 })
-export class VehicleDetailComponent implements CanDeactivate, OnChanges, OnInit {
-  @Input()
-  vehicle: Vehicle;
+export class VehicleDetailComponent implements CanDeactivate, OnChanges, OnDestroy, OnInit {
+  private _resetSubject: Subscription<any>;
+
+  @Input() vehicle: Vehicle;
   editName: string;
   editType: string;
 
@@ -688,101 +757,148 @@ export class VehicleDetailComponent implements CanDeactivate, OnChanges, OnInit 
     private _vehicleService: VehicleService,
     private _modalService: ModalService,
     private _routeParams: RouteParams,
-    private _router: Router) {
-  }
-
-  gotoVehicles() {
-    let route = ['Vehicles', { id: this.vehicle ? this.vehicle.id : null }]
-    this._router.navigate(route);
-  }
-
-  routerCanDeactivate(next: ComponentInstruction, prev: ComponentInstruction) {
-    return !this.vehicle ||
-      !this.isDirty() ||
-      this._modalService.activate();
-  }
-
-  isDirty() {
-    return this.vehicle.name !== this.editName ||
-      this.vehicle.type !== this.editType;
+    private _spinnerService: SpinnerService,    private _router: Router) {
+    this._resetSubject = this._vehicleService.onDbReset
+      .subscribe(() => this._getVehicle());
   }
 
   cancel() {
     this.editName = this.vehicle.name;
     this.editType = this.vehicle.type;
-    this.gotoVehicles();
+    this._gotoVehicles();
   }
 
-  save() {
-    this.vehicle.name = this.editName;
-    this.vehicle.type = this.editType;
-    this.gotoVehicles();
+  delete() {
+    let msg = 'Do you want to delete this character?';
+    this._modalService.activate(msg).then((responseOK) => {
+      if (responseOK) {
+        this._vehicleService.deleteVehicle(this.vehicle)
+          .subscribe(
+          () => this._gotoVehicles(), // Success path
+          (err) => this._handleServiceError('Delete', err), // Failure path
+          () => console.log('Delete Completed') // Completed actions
+          );
+      }
+    });
   }
 
   ngOnChanges(changes: any) {
     console.log(changes);
   }
 
+  ngOnDestroy() {
+    this._resetSubject.unsubscribe();
+  }
+
   ngOnInit() {
     componentHandler.upgradeDom();
+    this._getVehicle();
+  }
 
+  routerCanDeactivate(next: ComponentInstruction, prev: ComponentInstruction) {
+    return !this.vehicle ||
+      !this._isDirty() ||
+      this._modalService.activate();
+  }
+
+  save() {
+    this.vehicle.name = this.editName;
+    this.vehicle.type = this.editType;
+    this._gotoVehicles();
+  }
+
+  private _getVehicle() {
     if (!this.vehicle) {
       let id = +this._routeParams.get('id');
-
-      this._vehicleService.getVehicle(id)
-        .subscribe((vehicle: Vehicle) => { this.setVehicle(vehicle) });
+        this._spinnerService.show();      this._vehicleService.getVehicle(id)
+        .subscribe((vehicle: Vehicle) => {
+          this._setVehicle(vehicle);
+          this._spinnerService.hide();
+        });
     }
   }
 
-  private setVehicle(vehicle: Vehicle) {
+  private _gotoVehicles() {
+    let route = ['Vehicles', { id: this.vehicle ? this.vehicle.id : null }]
+    this._router.navigate(route);
+  }
+
+  private _handleServiceError(op: string, err: any) {
+    console.error(`${op} error: ${err.message || err}`);
+  }
+
+  private _isDirty() {
+    return this.vehicle.name !== this.editName ||
+      this.vehicle.type !== this.editType;
+  }
+
+  private _setVehicle(vehicle: Vehicle) {
     if (vehicle) {
       this.editName = vehicle.name;
       this.editType = vehicle.type;
       this.vehicle = vehicle;
     } else {
-      this.gotoVehicles();
+      this._gotoVehicles();
     }
   }
 }
 "><input type="hidden" name="files[app/vehicles/vehicle.service.ts]" value="import { Injectable } from 'angular2/core';
 import { Http, Response } from 'angular2/http';
-import { Subscription } from 'rxjs'; // Observable
-import 'rxjs/add/operator/map'; // TODO: this just has to be imported once somewhere in the app.
-import { CONFIG } from '../config';
+import { Observable } from 'rxjs/Rx';
+
+import { CONFIG } from '../shared/config';
+import { MessageService } from '../shared/message.service';
 
 let baseUrls = CONFIG.baseUrls;
 
 export interface Vehicle {
-	id: number;
-	name: string;
+  id: number;
+  name: string;
   type: string;
 }
 
 @Injectable()
 export class VehicleService {
-  subscription : Subscription<Vehicle>;
+  constructor(private _http: Http, private _messageService: MessageService) {
+    this._subscribeToOnDbReset();
+  }
 
-  constructor(private _http: Http) { }
+  deleteVehicle(vehicle: Vehicle) {
+    let result = this._http
+      .delete(`${baseUrls.vehicles}/${vehicle.id}`)
+      .map(this._catchBadResponse);
+    return result;
+
+  }
 
   getVehicles() {
-    let observable = this._http.get(baseUrls.vehicles)
+    return this._http.get(baseUrls.vehicles)
       .map((response: Response) => <Vehicle[]>response.json().data);
-
-    return observable;
   }
 
   getVehicle(id: number) {
     return this._http.get(`${baseUrls.vehicles}/${id}`)
       .map((response: Response) => response.json().data);
   }
-}
 
-function fetchFailed(error: any) {
-  //TODO: dont use console here
-  console.error(error);
-  return Promise.reject(error);
-}
-"><input type="hidden" name="files[app/vehicles/vehicles-dashboard.component.ts]" value="import { Component, OnInit } from 'angular2/core';
+  onDbReset = this._messageService.state;
+
+  private _catchBadResponse(res: Response) {
+    if (res.status < 200 || res.status >= 300) {
+      let data = res.json();
+      let emsg = data.error ? data.error : JSON.stringify(data);
+      throw new Error(emsg);
+    }
+    return res;
+  }
+
+  private _subscribeToOnDbReset() {
+    this._messageService.state.subscribe(state => {
+      console.log('data refresh received in vehicle service', state);
+      this.getVehicles();
+    });
+  }
+}"><input type="hidden" name="files[app/vehicles/vehicles-dashboard.component.ts]" value="import { Component, OnInit } from 'angular2/core';
 import { RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router';
 
 import { VehiclesComponent } from './vehicles.component';
@@ -802,18 +918,16 @@ import { VehicleService } from './vehicle.service';
 	{ path: '/list/:id', name: 'Vehicles', component: VehiclesComponent	},
 	{ path: '/:id', name: 'VehicleDetail', component: VehicleDetailComponent }
 ])
-export class VehiclesDashboardComponent implements OnInit {
-  constructor() { }
-  ngOnInit() { }
-}
-"><input type="hidden" name="files[app/vehicles/vehicles.component.ts]" value="import { Component, OnInit } from 'angular2/core';
+export class VehiclesDashboardComponent { }
+"><input type="hidden" name="files[app/vehicles/vehicles.component.ts]" value="import { Component, OnDestroy, OnInit } from 'angular2/core';
 import { ROUTER_DIRECTIVES } from 'angular2/router';
+import { Subscription } from 'rxjs/Rx';
 
 import { Vehicle, VehicleService } from './vehicle.service';
 import { FilterService } from '../blocks/filter.service';
 import { FilterTextComponent } from '../blocks/filter-text.component';
 import { InitCapsPipe } from '../blocks/init-caps.pipe'
-import { CONFIG } from '../config';
+import { SpinnerService } from '../shared/spinner.service';
 
 @Component({
   selector: 'taba-vehicles',
@@ -823,34 +937,803 @@ import { CONFIG } from '../config';
   pipes: [InitCapsPipe],
   providers: [FilterService]
 })
-export class VehiclesComponent implements OnInit {
+export class VehiclesComponent implements OnDestroy, OnInit {
+  private _resetSubject: Subscription<any>;
+
   vehicles: Vehicle[];
   filteredVehicles = this.vehicles;
   filterText = '';
 
   constructor(
     private _filterService: FilterService,
-    private _vehicleService: VehicleService) {
-  }
-
-  getVehicles() {
-    this.vehicles = [];
-
-    this._vehicleService.getVehicles()
-      .subscribe((vehicles: Vehicle[]) => {
-        this.vehicles = this.filteredVehicles = vehicles
-      });
-
-    return this.vehicles;
-  }
-
-  ngOnInit() {
-    componentHandler.upgradeDom();
-    this.vehicles = this.getVehicles();
+    private _spinnerService: SpinnerService,    private _vehicleService: VehicleService) {
+    this._resetSubject = this._vehicleService.onDbReset
+      .subscribe(() => this.getVehicles());
   }
 
   filterChanged(searchText: string) {
     this.filteredVehicles = this._filterService.filter(searchText, ['id', 'name', 'type'], this.vehicles);
+  }
+
+  getVehicles() {
+    this.vehicles = [];
+    this._spinnerService.show();
+    this._vehicleService.getVehicles()
+      .subscribe((vehicles: Vehicle[]) => {
+        this.vehicles = this.filteredVehicles = vehicles;
+        this._spinnerService.hide();
+      });
+  }
+
+  ngOnDestroy() {
+    this._resetSubject.unsubscribe();
+  }
+
+  ngOnInit() {
+    componentHandler.upgradeDom();
+    this.getVehicles();
+  }
+}
+"><input type="hidden" name="files[mock-backend/http-status-codes.ts]" value="export let STATUS_CODES_NUMBERS = {
+  CONTINUE: 100,
+  SWITCHING_PROTOCOLS: 101,
+  OK: 200,
+  CREATED: 201,
+  ACCEPTED: 202,
+  NON_AUTHORITATIVE_INFORMATION: 203,
+  NO_CONTENT: 204,
+  RESET_CONTENT: 205,
+  PARTIAL_CONTENT: 206,
+  MULTIPLE_CHOICES: 300,
+  MOVED_PERMANTENTLY: 301,
+  FOUND: 302,
+  SEE_OTHER: 303,
+  NOT_MODIFIED: 304,
+  USE_PROXY: 305,
+  TEMPORARY_REDIRECT: 307,
+  BAD_REQUEST: 400,
+  UNAUTHORIZED: 401,
+  PAYMENT_REQUIRED: 402,
+  FORBIDDEN: 403,
+  NOT_FOUND: 404,
+  METHOD_NOT_ALLOWED: 405,
+  NOT_ACCEPTABLE: 406,
+  PROXY_AUTHENTICATION_REQUIRED: 407,
+  REQUEST_TIMEOUT: 408,
+  CONFLICT: 409,
+  GONE: 410,
+  LENGTH_REQUIRED: 411,
+  PRECONDITION_FAILED: 412,
+  PAYLOAD_TO_LARGE: 413,
+  URI_TOO_LONG: 414,
+  UNSUPPORTED_MEDIA_TYPE: 415,
+  RANGE_NOT_SATISFIABLE: 416,
+  EXPECTATION_FAILED: 417,
+  IM_A_TEAPOT: 418,
+  UPGRADE_REQUIRED: 426,
+  INTERNAL_SERVER_ERROR: 500,
+  NOT_IMPLEMENTED: 501,
+  BAD_GATEWAY: 502,
+  SERVICE_UNAVAILABLE: 503,
+  GATEWAY_TIMEOUT: 504,
+  HTTP_VERSION_NOT_SUPPORTED: 505,
+  PROCESSING: 102,
+  MULTI_STATUS: 207,
+  IM_USED: 226,
+  PERMANENT_REDIRECT: 308,
+  UNPROCESSABLE_ENTRY: 422,
+  LOCKED: 423,
+  FAILED_DEPENDENCY: 424,
+  PRECONDITION_REQUIRED: 428,
+  TOO_MANY_REQUESTS: 429,
+  REQUEST_HEADER_FIELDS_TOO_LARGE: 431,
+  UNAVAILABLE_FOR_LEGAL_REASONS: 451,
+  VARIANT_ALSO_NEGOTIATES: 506,
+  INSUFFICIENT_STORAGE: 507,
+  NETWORK_AUTHENTICATION_REQUIRED: 511
+};
+
+export let STATUS_CODES =
+  {
+    &quot;100&quot;: {
+      &quot;code&quot;: 100,
+      &quot;text&quot;: &quot;Continue&quot;,
+      &quot;description&quot;: &quot;\&quot;The initial part of a request has been received and has not yet been rejected by the server.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC7231#6.2.1&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc7231#section-6.2.1&quot;
+    },
+    &quot;101&quot;: {
+      &quot;code&quot;: 101,
+      &quot;text&quot;: &quot;Switching Protocols&quot;,
+      &quot;description&quot;: &quot;\&quot;The server understands and is willing to comply with the client's request, via the Upgrade header field, for a change in the application protocol being used on this connection.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC7231#6.2.2&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc7231#section-6.2.2&quot;
+    },
+    &quot;200&quot;: {
+      &quot;code&quot;: 200,
+      &quot;text&quot;: &quot;OK&quot;,
+      &quot;description&quot;: &quot;\&quot;The request has succeeded.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC7231#6.3.1&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc7231#section-6.3.1&quot;
+    },
+    &quot;201&quot;: {
+      &quot;code&quot;: 201,
+      &quot;text&quot;: &quot;Created&quot;,
+      &quot;description&quot;: &quot;\&quot;The request has been fulfilled and has resulted in one or more new resources being created.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC7231#6.3.2&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc7231#section-6.3.2&quot;
+    },
+    &quot;202&quot;: {
+      &quot;code&quot;: 202,
+      &quot;text&quot;: &quot;Accepted&quot;,
+      &quot;description&quot;: &quot;\&quot;The request has been accepted for processing, but the processing has not been completed.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC7231#6.3.3&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc7231#section-6.3.3&quot;
+    },
+    &quot;203&quot;: {
+      &quot;code&quot;: 203,
+      &quot;text&quot;: &quot;Non-Authoritative Information&quot;,
+      &quot;description&quot;: &quot;\&quot;The request was successful but the enclosed payload has been modified from that of the origin server's 200 (OK) response by a transforming proxy.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC7231#6.3.4&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc7231#section-6.3.4&quot;
+    },
+    &quot;204&quot;: {
+      &quot;code&quot;: 204,
+      &quot;text&quot;: &quot;No Content&quot;,
+      &quot;description&quot;: &quot;\&quot;The server has successfully fulfilled the request and that there is no additional content to send in the response payload body.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC7231#6.3.5&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc7231#section-6.3.5&quot;
+    },
+    &quot;205&quot;: {
+      &quot;code&quot;: 205,
+      &quot;text&quot;: &quot;Reset Content&quot;,
+      &quot;description&quot;: &quot;\&quot;The server has fulfilled the request and desires that the user agent reset the \&quot;document view\&quot;, which caused the request to be sent, to its original state as received from the origin server.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC7231#6.3.6&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc7231#section-6.3.6&quot;
+    },
+    &quot;206&quot;: {
+      &quot;code&quot;: 206,
+      &quot;text&quot;: &quot;Partial Content&quot;,
+      &quot;description&quot;: &quot;\&quot;The server is successfully fulfilling a range request for the target resource by transferring one or more parts of the selected representation that correspond to the satisfiable ranges found in the requests's Range header field.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC7233#4.1&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc7233#section-4.1&quot;
+    },
+    &quot;300&quot;: {
+      &quot;code&quot;: 300,
+      &quot;text&quot;: &quot;Multiple Choices&quot;,
+      &quot;description&quot;: &quot;\&quot;The target resource has more than one representation, each with its own more specific identifier, and information about the alternatives is being provided so that the user (or user agent) can select a preferred representation by redirecting its request to one or more of those identifiers.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC7231#6.4.1&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc7231#section-6.4.1&quot;
+    },
+    &quot;301&quot;: {
+      &quot;code&quot;: 301,
+      &quot;text&quot;: &quot;Moved Permanently&quot;,
+      &quot;description&quot;: &quot;\&quot;The target resource has been assigned a new permanent URI and any future references to this resource ought to use one of the enclosed URIs.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC7231#6.4.2&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc7231#section-6.4.2&quot;
+    },
+    &quot;302&quot;: {
+      &quot;code&quot;: 302,
+      &quot;text&quot;: &quot;Found&quot;,
+      &quot;description&quot;: &quot;\&quot;The target resource resides temporarily under a different URI.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC7231#6.4.3&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc7231#section-6.4.3&quot;
+    },
+    &quot;303&quot;: {
+      &quot;code&quot;: 303,
+      &quot;text&quot;: &quot;See Other&quot;,
+      &quot;description&quot;: &quot;\&quot;The server is redirecting the user agent to a different resource, as indicated by a URI in the Location header field, that is intended to provide an indirect response to the original request.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC7231#6.4.4&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc7231#section-6.4.4&quot;
+    },
+    &quot;304&quot;: {
+      &quot;code&quot;: 304,
+      &quot;text&quot;: &quot;Not Modified&quot;,
+      &quot;description&quot;: &quot;\&quot;A conditional GET request has been received and would have resulted in a 200 (OK) response if it were not for the fact that the condition has evaluated to false.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC7232#4.1&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc7232#section-4.1&quot;
+    },
+    &quot;305&quot;: {
+      &quot;code&quot;: 305,
+      &quot;text&quot;: &quot;Use Proxy&quot;,
+      &quot;description&quot;: &quot;*deprecated*&quot;,
+      &quot;spec_title&quot;: &quot;RFC7231#6.4.5&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc7231#section-6.4.5&quot;
+    },
+    &quot;307&quot;: {
+      &quot;code&quot;: 307,
+      &quot;text&quot;: &quot;Temporary Redirect&quot;,
+      &quot;description&quot;: &quot;\&quot;The target resource resides temporarily under a different URI and the user agent MUST NOT change the request method if it performs an automatic redirection to that URI.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC7231#6.4.7&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc7231#section-6.4.7&quot;
+    },
+    &quot;400&quot;: {
+      &quot;code&quot;: 400,
+      &quot;text&quot;: &quot;Bad Request&quot;,
+      &quot;description&quot;: &quot;\&quot;The server cannot or will not process the request because the received syntax is invalid, nonsensical, or exceeds some limitation on what the server is willing to process.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC7231#6.5.1&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc7231#section-6.5.1&quot;
+    },
+    &quot;401&quot;: {
+      &quot;code&quot;: 401,
+      &quot;text&quot;: &quot;Unauthorized&quot;,
+      &quot;description&quot;: &quot;\&quot;The request has not been applied because it lacks valid authentication credentials for the target resource.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC7235#6.3.1&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc7235#section-3.1&quot;
+    },
+    &quot;402&quot;: {
+      &quot;code&quot;: 402,
+      &quot;text&quot;: &quot;Payment Required&quot;,
+      &quot;description&quot;: &quot;*reserved*&quot;,
+      &quot;spec_title&quot;: &quot;RFC7231#6.5.2&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc7231#section-6.5.2&quot;
+    },
+    &quot;403&quot;: {
+      &quot;code&quot;: 403,
+      &quot;text&quot;: &quot;Forbidden&quot;,
+      &quot;description&quot;: &quot;\&quot;The server understood the request but refuses to authorize it.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC7231#6.5.3&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc7231#section-6.5.3&quot;
+    },
+    &quot;404&quot;: {
+      &quot;code&quot;: 404,
+      &quot;text&quot;: &quot;Not Found&quot;,
+      &quot;description&quot;: &quot;\&quot;The origin server did not find a current representation for the target resource or is not willing to disclose that one exists.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC7231#6.5.4&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc7231#section-6.5.4&quot;
+    },
+    &quot;405&quot;: {
+      &quot;code&quot;: 405,
+      &quot;text&quot;: &quot;Method Not Allowed&quot;,
+      &quot;description&quot;: &quot;\&quot;The method specified in the request-line is known by the origin server but not supported by the target resource.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC7231#6.5.5&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc7231#section-6.5.5&quot;
+    },
+    &quot;406&quot;: {
+      &quot;code&quot;: 406,
+      &quot;text&quot;: &quot;Not Acceptable&quot;,
+      &quot;description&quot;: &quot;\&quot;The target resource does not have a current representation that would be acceptable to the user agent, according to the proactive negotiation header fields received in the request, and the server is unwilling to supply a default representation.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC7231#6.5.6&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc7231#section-6.5.6&quot;
+    },
+    &quot;407&quot;: {
+      &quot;code&quot;: 407,
+      &quot;text&quot;: &quot;Proxy Authentication Required&quot;,
+      &quot;description&quot;: &quot;\&quot;The client needs to authenticate itself in order to use a proxy.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC7231#6.3.2&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc7231#section-6.3.2&quot;
+    },
+    &quot;408&quot;: {
+      &quot;code&quot;: 408,
+      &quot;text&quot;: &quot;Request Timeout&quot;,
+      &quot;description&quot;: &quot;\&quot;The server did not receive a complete request message within the time that it was prepared to wait.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC7231#6.5.7&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc7231#section-6.5.7&quot;
+    },
+    &quot;409&quot;: {
+      &quot;code&quot;: 409,
+      &quot;text&quot;: &quot;Conflict&quot;,
+      &quot;description&quot;: &quot;\&quot;The request could not be completed due to a conflict with the current state of the resource.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC7231#6.5.8&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc7231#section-6.5.8&quot;
+    },
+    &quot;410&quot;: {
+      &quot;code&quot;: 410,
+      &quot;text&quot;: &quot;Gone&quot;,
+      &quot;description&quot;: &quot;\&quot;Access to the target resource is no longer available at the origin server and that this condition is likely to be permanent.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC7231#6.5.9&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc7231#section-6.5.9&quot;
+    },
+    &quot;411&quot;: {
+      &quot;code&quot;: 411,
+      &quot;text&quot;: &quot;Length Required&quot;,
+      &quot;description&quot;: &quot;\&quot;The server refuses to accept the request without a defined Content-Length.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC7231#6.5.10&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc7231#section-6.5.10&quot;
+    },
+    &quot;412&quot;: {
+      &quot;code&quot;: 412,
+      &quot;text&quot;: &quot;Precondition Failed&quot;,
+      &quot;description&quot;: &quot;\&quot;One or more preconditions given in the request header fields evaluated to false when tested on the server.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC7232#4.2&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc7232#section-4.2&quot;
+    },
+    &quot;413&quot;: {
+      &quot;code&quot;: 413,
+      &quot;text&quot;: &quot;Payload Too Large&quot;,
+      &quot;description&quot;: &quot;\&quot;The server is refusing to process a request because the request payload is larger than the server is willing or able to process.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC7231#6.5.11&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc7231#section-6.5.11&quot;
+    },
+    &quot;414&quot;: {
+      &quot;code&quot;: 414,
+      &quot;text&quot;: &quot;URI Too Long&quot;,
+      &quot;description&quot;: &quot;\&quot;The server is refusing to service the request because the request-target is longer than the server is willing to interpret.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC7231#6.5.12&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc7231#section-6.5.12&quot;
+    },
+    &quot;415&quot;: {
+      &quot;code&quot;: 415,
+      &quot;text&quot;: &quot;Unsupported Media Type&quot;,
+      &quot;description&quot;: &quot;\&quot;The origin server is refusing to service the request because the payload is in a format not supported by the target resource for this method.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC7231#6.5.13&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc7231#section-6.5.13&quot;
+    },
+    &quot;416&quot;: {
+      &quot;code&quot;: 416,
+      &quot;text&quot;: &quot;Range Not Satisfiable&quot;,
+      &quot;description&quot;: &quot;\&quot;None of the ranges in the request's Range header field overlap the current extent of the selected resource or that the set of ranges requested has been rejected due to invalid ranges or an excessive request of small or overlapping ranges.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC7233#4.4&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc7233#section-4.4&quot;
+    },
+    &quot;417&quot;: {
+      &quot;code&quot;: 417,
+      &quot;text&quot;: &quot;Expectation Failed&quot;,
+      &quot;description&quot;: &quot;\&quot;The expectation given in the request's Expect header field could not be met by at least one of the inbound servers.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC7231#6.5.14&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc7231#section-6.5.14&quot;
+    },
+    &quot;418&quot;: {
+      &quot;code&quot;: 418,
+      &quot;text&quot;: &quot;I'm a teapot&quot;,
+      &quot;description&quot;: &quot;\&quot;1988 April Fools Joke. Returned by tea pots requested to brew coffee.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC 2324&quot;,
+      &quot;spec_href&quot;: &quot;https://tools.ietf.org/html/rfc2324&quot;
+    },
+    &quot;426&quot;: {
+      &quot;code&quot;: 426,
+      &quot;text&quot;: &quot;Upgrade Required&quot;,
+      &quot;description&quot;: &quot;\&quot;The server refuses to perform the request using the current protocol but might be willing to do so after the client upgrades to a different protocol.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC7231#6.5.15&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc7231#section-6.5.15&quot;
+    },
+    &quot;500&quot;: {
+      &quot;code&quot;: 500,
+      &quot;text&quot;: &quot;Internal Server Error&quot;,
+      &quot;description&quot;: &quot;\&quot;The server encountered an unexpected condition that prevented it from fulfilling the request.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC7231#6.6.1&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc7231#section-6.6.1&quot;
+    },
+    &quot;501&quot;: {
+      &quot;code&quot;: 501,
+      &quot;text&quot;: &quot;Not Implemented&quot;,
+      &quot;description&quot;: &quot;\&quot;The server does not support the functionality required to fulfill the request.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC7231#6.6.2&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc7231#section-6.6.2&quot;
+    },
+    &quot;502&quot;: {
+      &quot;code&quot;: 502,
+      &quot;text&quot;: &quot;Bad Gateway&quot;,
+      &quot;description&quot;: &quot;\&quot;The server, while acting as a gateway or proxy, received an invalid response from an inbound server it accessed while attempting to fulfill the request.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC7231#6.6.3&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc7231#section-6.6.3&quot;
+    },
+    &quot;503&quot;: {
+      &quot;code&quot;: 503,
+      &quot;text&quot;: &quot;Service Unavailable&quot;,
+      &quot;description&quot;: &quot;\&quot;The server is currently unable to handle the request due to a temporary overload or scheduled maintenance, which will likely be alleviated after some delay.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC7231#6.6.4&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc7231#section-6.6.4&quot;
+    },
+    &quot;504&quot;: {
+      &quot;code&quot;: 504,
+      &quot;text&quot;: &quot;Gateway Time-out&quot;,
+      &quot;description&quot;: &quot;\&quot;The server, while acting as a gateway or proxy, did not receive a timely response from an upstream server it needed to access in order to complete the request.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC7231#6.6.5&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc7231#section-6.6.5&quot;
+    },
+    &quot;505&quot;: {
+      &quot;code&quot;: 505,
+      &quot;text&quot;: &quot;HTTP Version Not Supported&quot;,
+      &quot;description&quot;: &quot;\&quot;The server does not support, or refuses to support, the protocol version that was used in the request message.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC7231#6.6.6&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc7231#section-6.6.6&quot;
+    },
+    &quot;102&quot;: {
+      &quot;code&quot;: 102,
+      &quot;text&quot;: &quot;Processing&quot;,
+      &quot;description&quot;: &quot;\&quot;An interim response to inform the client that the server has accepted the complete request, but has not yet completed it.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC5218#10.1&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc2518#section-10.1&quot;
+    },
+    &quot;207&quot;: {
+      &quot;code&quot;: 207,
+      &quot;text&quot;: &quot;Multi-Status&quot;,
+      &quot;description&quot;: &quot;\&quot;Status for multiple independent operations.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC5218#10.2&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc2518#section-10.2&quot;
+    },
+    &quot;226&quot;: {
+      &quot;code&quot;: 226,
+      &quot;text&quot;: &quot;IM Used&quot;,
+      &quot;description&quot;: &quot;\&quot;The server has fulfilled a GET request for the resource, and the response is a representation of the result of one or more instance-manipulations applied to the current instance.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC3229#10.4.1&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc3229#section-10.4.1&quot;
+    },
+    &quot;308&quot;: {
+      &quot;code&quot;: 308,
+      &quot;text&quot;: &quot;Permanent Redirect&quot;,
+      &quot;description&quot;: &quot;\&quot;The target resource has been assigned a new permanent URI and any future references to this resource SHOULD use one of the returned URIs. [...] This status code is similar to 301 Moved Permanently (Section 7.3.2 of rfc7231), except that it does not allow rewriting the request method from POST to GET.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC7238&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc7238&quot;
+    },
+    &quot;422&quot;: {
+      &quot;code&quot;: 422,
+      &quot;text&quot;: &quot;Unprocessable Entity&quot;,
+      &quot;description&quot;: &quot;\&quot;The server understands the content type of the request entity (hence a 415(Unsupported Media Type) status code is inappropriate), and the syntax of the request entity is correct (thus a 400 (Bad Request) status code is inappropriate) but was unable to process the contained instructions.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC5218#10.3&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc2518#section-10.3&quot;
+    },
+    &quot;423&quot;: {
+      &quot;code&quot;: 423,
+      &quot;text&quot;: &quot;Locked&quot;,
+      &quot;description&quot;: &quot;\&quot;The source or destination resource of a method is locked.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC5218#10.4&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc2518#section-10.4&quot;
+    },
+    &quot;424&quot;: {
+      &quot;code&quot;: 424,
+      &quot;text&quot;: &quot;Failed Dependency&quot;,
+      &quot;description&quot;: &quot;\&quot;The method could not be performed on the resource because the requested action depended on another action and that action failed.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC5218#10.5&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc2518#section-10.5&quot;
+    },
+    &quot;428&quot;: {
+      &quot;code&quot;: 428,
+      &quot;text&quot;: &quot;Precondition Required&quot;,
+      &quot;description&quot;: &quot;\&quot;The origin server requires the request to be conditional.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC6585#3&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc6585#section-3&quot;
+    },
+    &quot;429&quot;: {
+      &quot;code&quot;: 429,
+      &quot;text&quot;: &quot;Too Many Requests&quot;,
+      &quot;description&quot;: &quot;\&quot;The user has sent too many requests in a given amount of time (\&quot;rate limiting\&quot;).\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC6585#4&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc6585#section-4&quot;
+    },
+    &quot;431&quot;: {
+      &quot;code&quot;: 431,
+      &quot;text&quot;: &quot;Request Header Fields Too Large&quot;,
+      &quot;description&quot;: &quot;\&quot;The server is unwilling to process the request because its header fields are too large.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC6585#5&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc6585#section-5&quot;
+    },
+    &quot;451&quot;: {
+      &quot;code&quot;: 451,
+      &quot;text&quot;: &quot;Unavailable For Legal Reasons&quot;,
+      &quot;description&quot;: &quot;\&quot;The server is denying access to the resource in response to a legal demand.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;draft-ietf-httpbis-legally-restricted-status&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/draft-ietf-httpbis-legally-restricted-status&quot;
+    },
+    &quot;506&quot;: {
+      &quot;code&quot;: 506,
+      &quot;text&quot;: &quot;Variant Also Negotiates&quot;,
+      &quot;description&quot;: &quot;\&quot;The server has an internal configuration error: the chosen variant resource is configured to engage in transparent content negotiation itself, and is therefore not a proper end point in the negotiation process.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC2295#8.1&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc2295#section-8.1&quot;
+    },
+    &quot;507&quot;: {
+      &quot;code&quot;: 507,
+      &quot;text&quot;: &quot;Insufficient Storage&quot;,
+      &quot;description&quot;: &quot;\The method could not be performed on the resource because the server is unable to store the representation needed to successfully complete the request.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC5218#10.6&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc2518#section-10.6&quot;
+    },
+    &quot;511&quot;: {
+      &quot;code&quot;: 511,
+      &quot;text&quot;: &quot;Network Authentication Required&quot;,
+      &quot;description&quot;: &quot;\&quot;The client needs to authenticate to gain network access.\&quot;&quot;,
+      &quot;spec_title&quot;: &quot;RFC6585#6&quot;,
+      &quot;spec_href&quot;: &quot;http://tools.ietf.org/html/rfc6585#section-6&quot;
+    }
+  }"><input type="hidden" name="files[mock-backend/mock-backend.service.ts]" value="import { Inject, OpaqueToken } from 'angular2/core';
+import { Headers, Request, RequestMethod, Response, ResponseOptions } from 'angular2/http';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/delay';
+
+import { STATUS_CODES, STATUS_CODES_NUMBERS } from './http-status-codes';
+
+export const MOCK_DATA = new OpaqueToken('mockData');
+
+/**
+* Interface for a class that creates a mock database
+* Safe for consuming service to morph arrays and objects.
+*/
+export interface IMockDataService {
+  /**
+  * Creates &quot;database&quot; object hash whose keys are resource names
+  * and whose values are arrays of the resource objects.
+  *
+  * It must be safe to call again and should return new arrays with new objects.
+  * This condition allows MockBackendService to morph the arrays and objects
+  * without touching the original source data.
+  */
+  createDb(): {}
+}
+
+/**
+* Interface object w/ info for the current request url
+* extracted from an Http Request
+*/
+export interface ReqInfo {
+  req: Request,
+  base: string,
+  resource: string,
+  id: any,
+  collection: any[],
+  headers: Headers
+}
+
+/**
+ * Simulate the behavior of a RESTy web api
+ * backed by the simple in-memory data store provided by the injected MockDataService service.
+ * Conforms mostly to behavior described here:
+ * http://www.restapitutorial.com/lessons/httpmethods.html
+ *
+ * ### Usage
+ *
+ * Create MockDataService class the implements MockDataService.
+ * Register both this service and the mockdata as in:
+ * ```
+ * // other imports
+ * import { HTTP_PROVIDERS, XHRBackend } from 'angular2/http';
+ * import { MockBackendService, MOCK_DATA } from '../api/mock-backend.service';
+ * import { MockDataService } from '../api/mock-data';
+ *
+ * @Component({
+ *   selector: ...,
+ *   templateUrl: ...,
+ *   providers: [
+ *     HTTP_PROVIDERS,
+ *     provide(XHRBackend, {useClass: MockBackendService}),
+ *     provide(MOCK_DATA,  {useClass: MockDataService})
+ *   ]
+ * })
+ * export class AppComponent { ... }
+ * ```
+ */
+export class MockBackendService {
+  private _db: {};
+
+  /**
+   * Simulate latency by setting this millisecond delay
+   * Default delay is 0ms.
+   * ### Usage
+   * constructor(mockBackendService: XHRBackend){
+   *   mockBackendService['delay'] = 500; // ms response delay
+   * }
+   */
+  delay = 0;
+
+  constructor( @Inject(MOCK_DATA) private _mockData: IMockDataService) {
+    this._resetDb();
+  }
+
+  /**
+   * Process Request and return an Http Response object
+   * in the manner of a RESTy web api.
+   *
+   * Expect URI pattern in the form :base/:resource/:id?
+   * Examples:
+   *   api/characters
+   *   api/characters/42
+   *   api/characters.json/42   // ignores the &quot;.json&quot;
+   *   api/resetDb  // resets the &quot;database&quot;
+   */
+  createConnection(req: Request) {
+    let {base, id, resource, path} = this._parseUrl(req.url);
+
+    let reqInfo: ReqInfo = {
+      req: req,
+      base: base,
+      collection: this._db[resource],
+      headers: new Headers({ &quot;Content-Type&quot;: &quot;application/json&quot; }),
+      id: this._parseId(id),
+      resource: resource
+    }
+
+    let options: ResponseOptions;
+
+    try {
+      if (reqInfo.resource === 'resetDb') {
+        this._resetDb();
+        options = new ResponseOptions({ status: STATUS_CODES_NUMBERS.OK });
+        return { response: Observable.of(new Response(options)) };
+      }
+
+      if (reqInfo.collection) {
+        switch (req.method) {
+          case RequestMethod.Get:
+            options = this._get(reqInfo);
+            break;
+          case RequestMethod.Post:
+            options = this._post(reqInfo);
+            break;
+          case RequestMethod.Put:
+            options = this._put(reqInfo);
+            break;
+          case RequestMethod.Delete:
+            options = this._delete(reqInfo);
+            break;
+          default:
+            options = this._createErrorResponse(STATUS_CODES_NUMBERS.METHOD_NOT_ALLOWED, &quot;Method not allowed&quot;);
+            break;
+        }
+      } else {
+        options = this._createErrorResponse(STATUS_CODES_NUMBERS.NOT_FOUND, `Collection &quot;${resource}&quot; not found`);
+      }
+
+    } catch (error) {
+      let err = error.message || error;
+      options = this._createErrorResponse(STATUS_CODES_NUMBERS.INTERNAL_SERVER_ERROR, `${err}`);
+    }
+
+    options = this._setStatusText(options);
+    let response = Observable.of(new Response(options)).delay(this.delay);
+    return { response };
+  }
+
+  ////  protected /////
+  protected _clone(data: any) {
+    return JSON.parse(JSON.stringify(data));
+  }
+
+  protected _createErrorResponse(status: number, message: string) {
+    return new ResponseOptions({
+      body: { &quot;error&quot;: `${message}` },
+      headers: new Headers({ &quot;Content-Type&quot;: &quot;application/json&quot; }),
+      status: status
+    });
+  }
+
+  protected _delete({id, collection, headers, req, resource}: ReqInfo) {
+    if (!id) {
+      return this._createErrorResponse(STATUS_CODES_NUMBERS.NOT_FOUND, `Missing &quot;${resource}&quot; id`);
+    }
+    let exists = this._removeById(collection, id);
+    return new ResponseOptions({
+      headers: headers,
+      status: exists ? STATUS_CODES_NUMBERS.OK : STATUS_CODES_NUMBERS.NOT_FOUND
+    });
+  }
+
+  protected _findById(collection: any[], id: number) {
+    return collection.find((item: any) => item.id === id);
+  }
+
+  protected _genId(collection: any): any {
+    // assumes numeric ids
+    let maxId = 0;
+    collection.reduce((prev: any, item: any) => {
+      maxId = Math.max(maxId, typeof item.id === 'number' ? item.id : maxId);
+    }, null);
+    return maxId + 1;
+  }
+
+  protected _genUrl(base: string, resource: string, id: any) {
+    return base + '/' + resource + '/' + id;
+  }
+
+  protected _get({id, collection, headers, resource}: ReqInfo) {
+    let data = (id) ? this._findById(collection, id) : collection;
+    if (!data) {
+      return this._createErrorResponse(STATUS_CODES_NUMBERS.NOT_FOUND,
+        `&quot;${resource}&quot; with id=&quot;${id}&quot; not found`)
+    }
+    return new ResponseOptions({
+      body: { data: this._clone(data) },
+      headers: headers,
+      status: STATUS_CODES_NUMBERS.OK
+    });
+  }
+
+  protected _getLocation(href: string) {
+    var l = document.createElement('a');
+    l.href = href;
+    return l;
+  };
+
+  protected _indexOf(collection: any[], id: number) {
+    return collection.findIndex((item: any) => item.id === id);
+  }
+
+  // tries to parse id as integer; returns input id if not an integer.
+  protected _parseId(id: string): any {
+    if (!id) { return null; }
+    let idNum = parseInt(id, 10);
+    return isNaN(idNum) ? id : idNum;
+  }
+
+  protected _parseUrl(url: string) {
+    let loc = this._getLocation(url);
+    let parsedUrl = loc.pathname.substr(loc.pathname.indexOf('/api'));
+    //TODO: this now has a dependency on &quot;/api&quot;. We need to fix this.
+    // let parsedUrl = loc.pathname;
+    // ex: '/api/characters.json/21'
+    // ex via plunker: '/jjhasfjksajsdfjk/api/characters.json/21'
+    let [, base, path, id] = parsedUrl.split('/');
+    let [resource] = path.split('.'); // ignore anything after the '.', e.g., '.json'
+    return { base, id, path, resource };
+  }
+
+  protected _post({base, id, collection, headers, req, resource}: ReqInfo) {
+    let item = JSON.parse(<string>req.text());
+    // ignore the request id, if any. Alternatively, could reject request
+    if (!item.id) {
+      item.id = this._genId(collection);
+    }
+    let existingIx = this._indexOf(collection, id);
+    if (existingIx > -1) {
+      collection[existingIx] = item;
+      return new ResponseOptions({
+        headers: headers,
+        status: STATUS_CODES_NUMBERS.NO_CONTENT
+      });
+    } else {
+      collection.push(item);
+      headers.set('Location', this._genUrl(base, resource, id))
+      return new ResponseOptions({
+        headers: headers,
+        status: STATUS_CODES_NUMBERS.CREATED
+      });
+    }
+  }
+
+  protected _put({id, collection, headers, req, resource}: ReqInfo) {
+    let item = JSON.parse(<string>req.text());
+    if (!id) {
+      return this._createErrorResponse(STATUS_CODES_NUMBERS.NOT_FOUND, `Missing &quot;${resource}&quot; id`);
+    }
+    if (id !== item.id) {
+      return this._createErrorResponse(STATUS_CODES_NUMBERS.BAD_REQUEST,
+        `&quot;${resource}&quot; id does not match item.id`);
+    }
+    let existingIx = this._indexOf(collection, id);
+    if (existingIx > -1) {
+      collection[existingIx] = item;
+      return new ResponseOptions({
+        headers: headers,
+        status: STATUS_CODES_NUMBERS.NO_CONTENT // successful; no content
+      });
+    } else {
+      collection.push(item);
+      return new ResponseOptions({
+        body: { data: this._clone(item) },
+        headers: headers,
+        status: STATUS_CODES_NUMBERS.CREATED
+      });
+    }
+  }
+
+  protected _removeById(collection: any[], id: number) {
+    let ix = this._indexOf(collection, id);
+    if (ix > -1) {
+      collection.splice(ix, 1);
+      return true;
+    }
+    return false;
+  }
+
+  /**
+   * Reset the &quot;database&quot; to its original state
+   * To invoke, send any request with &quot;resetDb&quot; as the resource
+   */
+  protected _resetDb() {
+    this._db = this._mockData.createDb();
+  }
+
+  protected _setStatusText(options: ResponseOptions) {
+    try {
+      let statusCode = STATUS_CODES[options.status];
+      options['statusText'] = statusCode ? statusCode.text : 'Unknown Status';
+      return options;
+    } catch (err) {
+      return new ResponseOptions({
+        status: STATUS_CODES_NUMBERS.INTERNAL_SERVER_ERROR,
+        statusText: 'Invalid Server Operation'
+      });
+    }
   }
 }
 "><input type="hidden" name="files[app/app.component.css]" value=".mdl-layout__header {
@@ -907,14 +1790,6 @@ article.template {
   -webkit-transition: opacity 400ms ease-in;
   -moz-transition: opacity 400ms ease-in;
   transition: opacity 400ms ease-in;
-
-  /*-webkit-animation-duration: 3s;
-  -webkit-animation-delay: 2s;
-  -webkit-animation-iteration-count: infinite;
-
-  -moz-animation-duration: 3s;
-  -moz-animation-delay: 2s;
-  -moz-animation-iteration-count: infinite;*/
 }
 
 .animated {
@@ -922,6 +1797,28 @@ article.template {
   animation-duration: 400ms;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
+}
+
+#reset-button {
+  position: fixed;
+  right: 2em;
+  top: 1em;
+}
+
+#spinner {
+  border-width: 8em;
+  position: fixed;
+  top: 25%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -70px;
+  z-index: 9999;
+}
+
+@media (max-width: 480px) {
+  #reset-button {
+    display: none
+  }
 }
 "><input type="hidden" name="files[app/blocks/modal/modal.component.css]" value=".dialog-container,
 .loading-container {
@@ -1005,7 +1902,7 @@ article.template {
 
 @media (max-width: 839px) and (min-width: 480px){
   .mdl-cell.mdl-cell--3-col {
-      width: 25%;
+    width: 25%;
   }
   .mdl-cell.mdl-cell--3-col > button {
     width: 120px;
@@ -1013,8 +1910,6 @@ article.template {
     font-size: 12px;
   }
 }
-
-/*.dashboard-button:hover { background-color: rgb(255,64,129); cursor: pointer; }*/
 "><input type="hidden" name="files[app/vehicles/vehicles.component.css]" value=".vehicles {
   list-style-type: none;
   padding: 0;
@@ -11556,6 +12451,7 @@ iframe.heightSet {
     <div class=&quot;mdl-layout__header-row&quot;>
       <a class=&quot;md-title-icon&quot; ng-href=&quot;http://pluralsight.com&quot; target=&quot;_blank&quot;><i></i></a>
       <span class=&quot;mdl-layout-title&quot;>Storyline Tracker</span>
+      <button id=&quot;reset-button&quot; class=&quot;mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent mdl-button--raised&quot; (click)=&quot;resetDb()&quot;>Reset Data</button>
     </div>
     <div class=&quot;mdl-navigation&quot;>
       <a *ngFor=&quot;#item of menuItems&quot; [routerLink]=&quot;item.link&quot; class=&quot;nav-link&quot; href=&quot;&quot;>{{item.caption}}</a>
@@ -11568,8 +12464,14 @@ iframe.heightSet {
       </div>
     </section>
   </main>
+  <div id=&quot;spinner&quot; class=&quot;mdl-spinner mdl-js-spinner mdl-spinner--single-color&quot;></div>
   <modal-confirm></modal-confirm>
-</div>"><input type="hidden" name="files[app/blocks/modal/modal.component.html]" value="<div id=&quot;confirmationModal&quot; class=&quot;dialog-container&quot;>
+</div>"><input type="hidden" name="files[app/blocks/filter-text.component.html]" value="<form>
+  <div class=&quot;mdl-textfield mdl-js-textfield mdl-textfield--floating-label&quot;>
+    <label class=&quot;mdl-textfield__label&quot; for=&quot;filterText&quot;>Filter...</label>
+    <input type=&quot;text&quot; id=&quot;filterText&quot; class=&quot;mdl-textfield__input&quot; [(ngModel)]=&quot;filter&quot; (keyup)=&quot;filterChanged($event)&quot; />
+  </div>
+</form>"><input type="hidden" name="files[app/blocks/modal/modal.component.html]" value="<div id=&quot;confirmationModal&quot; class=&quot;dialog-container&quot;>
   <div class=&quot;mdl-card mdl-shadow--16dp&quot;>
     <h5>{{title}}</h5>
     <p>{{message}}</p>
@@ -11594,17 +12496,14 @@ iframe.heightSet {
       <input type=&quot;text&quot; id=&quot;sidetext&quot; class=&quot;mdl-textfield__input&quot; [(ngModel)]=&quot;editSide&quot; />
     </div>
 
-    <div class=&quot;mdl-textfield mdl-js-textfield mdl-textfield--floating-label&quot;>
-      <label class=&quot;mdl-textfield__label&quot; for=&quot;vehicle&quot;>Vehicle</label>
-      <input type=&quot;select&quot; id=&quot;vehicle&quot; class=&quot;mdl-textfield__input&quot;/>
-    </div>
-
     <div>
       <button class=&quot;dashboard-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect
       mdl-button--accent&quot; (click)=&quot;save()&quot;>Save</button>
       &amp;nbsp;
       <button class=&quot;dashboard-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect
       &quot; (click)=&quot;cancel()&quot;>Cancel</button>
+      &amp;nbsp;
+      <button class=&quot;dashboard-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect&quot; (click)=&quot;delete()&quot;>Delete</button>
     </div>
 
   </div>
@@ -11663,6 +12562,8 @@ iframe.heightSet {
       &amp;nbsp;
       <button class=&quot;dashboard-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect
       &quot; (click)=&quot;cancel()&quot;>Cancel</button>
+      &amp;nbsp;
+      <button class=&quot;dashboard-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect&quot; (click)=&quot;delete()&quot;>Delete</button>
     </div>
 
   </div>
@@ -11680,7 +12581,7 @@ iframe.heightSet {
         <div class=&quot;mdl-card__menu&quot;>
           <button class=&quot;mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect&quot; [routerLink]=&quot;['VehicleDetail', {id: vehicle.id}]&quot;>
 
-            <div class=&quot;icon mdl-color--accent icon-ic_play_circle_filled_white_24dp&quot;></div>
+            <div class=&quot;icon mdl-color--primary icon-ic_play_circle_filled_white_24dp&quot;></div>
 
           </button>
         </div>
@@ -11722,6 +12623,7 @@ iframe.heightSet {
         typescriptOptions: { emitDecoratorMetadata: true }, 
         packages: {
           'api': {defaultExtension: 'ts'}, 
+          'mock-backend': {defaultExtension: 'ts'}, 
           'app': {defaultExtension: 'ts'} 
         } 
       });
@@ -11732,7 +12634,7 @@ iframe.heightSet {
 </head>
 
 <body>
-  <taba-app>Loading...</taba-app>
+  <taba-app>Loading Storyline Tracker ...</taba-app>
 </body>
 
 </html>"><input type="hidden" name="files[plunker-builder/license.md]" value="Copyright 2010-2015 Google, Inc. http://angularjs.org
