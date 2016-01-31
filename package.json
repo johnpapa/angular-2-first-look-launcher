@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "lite-server"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/johnpapa/angular2-first-look/issues"
   },
-  "homepage": "https://github.com/johnpapa/angular2-first-look#readme"
+  "homepage": "https://github.com/johnpapa/angular2-first-look#readme",
+  "devDependencies": {
+    "lite-server": "^2.0.1"
+  }
 }
