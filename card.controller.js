@@ -71,7 +71,18 @@
         title: 'A1 - A2: Angular 2 Event Binding',
         example: '/a1-a2/a2/binding-events/' + demoFile,
         summary: 'Simple example of an Angular 2 Event Binding.'
-      }
+      },
+      {
+        id: 11,
+        title: 'A1 - A2: Angular 1 Services and DI',
+        example: '/a1-a2/a1/services/' + demoFile,
+        summary: 'Simple example of an Angular 1 Services and DI.'
+      },
+      {
+        id: 12,
+        title: 'A1 - A2: Angular 2 Services and DI',
+        example: '/a1-a2/a2/services/' + demoFile,
+        summary: 'Simple example of an Angular 2 Services and DI.'
     ];
     // }, {
     //   id: 1,
