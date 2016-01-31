@@ -47,6 +47,30 @@
         title: 'A1 - A2: Angular 2 Two-Way Data Binding',
         example: '/a1-a2/a2/2-way/' + demoFile,
         summary: 'Simple example of an Angular 2 Two-Way Data Binding.'
+      },
+      {
+        id: 7,
+        title: 'A1 - A2: Angular 1 Property Binding',
+        example: '/a1-a2/a1/property-binding/' + demoFile,
+        summary: 'Simple example of an Angular 1 Property Binding.'
+      },
+      {
+        id: 8,
+        title: 'A1 - A2: Angular 2 Property Binding',
+        example: '/a1-a2/a2/property-binding/' + demoFile,
+        summary: 'Simple example of an Angular 2 Property Binding.'
+      },
+      {
+        id: 9,
+        title: 'A1 - A2: Angular 1 Event Binding',
+        example: '/a1-a2/a1/binding-events/' + demoFile,
+        summary: 'Simple example of an Angular 1 Event Binding.'
+      },
+      {
+        id: 10,
+        title: 'A1 - A2: Angular 2 Event Binding',
+        example: '/a1-a2/a2/binding-events/' + demoFile,
+        summary: 'Simple example of an Angular 2 Event Binding.'
       }
     ];
     // }, {
