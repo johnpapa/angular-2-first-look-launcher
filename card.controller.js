@@ -23,6 +23,18 @@
         title: 'A1 - A2: Angular 2 Component',
         example: '/a1-a2/a2/component/' + demoFile,
         summary: 'Simple example of an Angular 2 Component.'
+      },
+      {
+        id: 3,
+        title: 'A1 - A2: Angular 1 Structural Directives',
+        example: '/a1-a2/a1/structural-directives/' + demoFile,
+        summary: 'Simple example of an Angular 1 Structural Directives.'
+      },
+      {
+        id: 4,
+        title: 'A1 - A2: Angular 2 Structural Directives',
+        example: '/a1-a2/a2/structural-directives/' + demoFile,
+        summary: 'Simple example of an Angular 2 Structural Directives.'
       }
     ];
     // }, {
