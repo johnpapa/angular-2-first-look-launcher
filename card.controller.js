@@ -35,7 +35,18 @@
         title: 'A1 - A2: Angular 2 Structural Directives',
         example: '/a1-a2/a2/structural-directives/' + demoFile,
         summary: 'Simple example of an Angular 2 Structural Directives.'
-      }
+      },
+      {
+        id: 5,
+        title: 'A1 - A2: Angular 1 Two-Way Data Binding',
+        example: '/a1-a2/a1/2-way/' + demoFile,
+        summary: 'Simple example of an Angular 1 Two-Way Data Binding.'
+      },
+      {
+        id: 6,
+        title: 'A1 - A2: Angular 2 Two-Way Data Binding',
+        example: '/a1-a2/a2/2-way/' + demoFile,
+        summary: 'Simple example of an Angular 2 Two-Way Data Binding.'
     ];
     // }, {
     //   id: 1,
