@@ -9,18 +9,19 @@
 
   function CardController() {
     var vm = this;
+    var demoFile = 'plnkr.demo.html';
 
     vm.cards = [
       {
         id: 1,
         title: 'A1 - A2: Angular 1 Controller',
-        example: '/a1-a2/a1/controller/plunker.demo.html',
+        example: '/a1-a2/a1/controller/' + demoFile,
         summary: 'Simple example of an Angular 1 Controller.'
       },
       {
         id: 2,
         title: 'A1 - A2: Angular 2 Component',
-        example: '/a1-a2/a2/component/plunker.demo.html',
+        example: '/a1-a2/a2/component/' + demoFile,
         summary: 'Simple example of an Angular 2 Component.'
       }
     ];
