@@ -83,6 +83,7 @@
         title: 'A1 - A2: Angular 2 Services and DI',
         example: '/a1-a2/a2/services/' + demoFile,
         summary: 'Simple example of an Angular 2 Services and DI.'
+      }
     ];
     // }, {
     //   id: 1,
