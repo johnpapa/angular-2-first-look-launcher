@@ -83,6 +83,11 @@
         title: 'A1 - A2: Angular 2 Services and DI',
         example: '/a1-a2/a2/services/' + demoFile,
         summary: 'Simple example of Angular 2 Services and DI.'
+      }, {
+        id: 13,
+        title: 'A2: Components',
+        example: '/component-simple/' + demoFile,
+        summary: 'A Component contains application logic that controls a region of the user interface that we call a view.'
       }
     ];
     // }, {
