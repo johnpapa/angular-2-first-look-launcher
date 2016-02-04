@@ -13,6 +13,12 @@
     var demoFile = 'plnkr.demo.html';
     var cards = [
       {
+        id: 0,
+        title: 'Angular 2 Storyline Tracker',
+        example: '/storyline-tracker/' + demoFile,
+        summary: 'Example of all of the concepts put together in an application.'
+      },
+      {
         id: 1,
         title: 'A1 - A2: Angular 1 Controller',
         example: '/a1-a2/a1/controller/' + demoFile,
