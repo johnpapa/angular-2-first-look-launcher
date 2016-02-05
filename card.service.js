@@ -15,92 +15,98 @@
       {
         id: 0,
         title: 'Angular 2 Storyline Tracker',
-        example: '/storyline-tracker/' + demoFile,
+        example: 'storyline-tracker/' + demoFile,
         summary: 'Example of all of the concepts put together in an application.'
       },
       {
         id: 1,
         title: 'A1 - A2: Angular 1 Controller',
-        example: '/a1-a2/a1/controller/' + demoFile,
+        example: 'a1-a2/a1/controller/' + demoFile,
         summary: 'Simple example of an Angular 1 Controller.'
       },
       {
         id: 2,
         title: 'A1 - A2: Angular 2 Component',
-        example: '/a1-a2/a2/component/' + demoFile,
+        example: 'a1-a2/a2/component/' + demoFile,
         summary: 'Simple example of an Angular 2 Component.'
       },
       {
         id: 3,
         title: 'A1 - A2: Angular 1 Structural Directives',
-        example: '/a1-a2/a1/structural-directives/' + demoFile,
+        example: 'a1-a2/a1/structural-directives/' + demoFile,
         summary: 'Simple example of an Angular 1 Structural Directive.'
       },
       {
         id: 4,
         title: 'A1 - A2: Angular 2 Structural Directives',
-        example: '/a1-a2/a2/structural-directives/' + demoFile,
+        example: 'a1-a2/a2/structural-directives/' + demoFile,
         summary: 'Simple example of an Angular 2 Structural Directive.'
       },
       {
         id: 5,
         title: 'A1 - A2: Angular 1 Two-Way Data Binding',
-        example: '/a1-a2/a1/2-way/' + demoFile,
+        example: 'a1-a2/a1/2-way/' + demoFile,
         summary: 'Simple example of Angular 1 Two-Way Data Binding.'
       },
       {
         id: 6,
         title: 'A1 - A2: Angular 2 Two-Way Data Binding',
-        example: '/a1-a2/a2/2-way/' + demoFile,
+        example: 'a1-a2/a2/2-way/' + demoFile,
         summary: 'Simple example of Angular 2 Two-Way Data Binding.'
       },
       {
         id: 7,
         title: 'A1 - A2: Angular 1 Property Binding',
-        example: '/a1-a2/a1/property-binding/' + demoFile,
+        example: 'a1-a2/a1/property-binding/' + demoFile,
         summary: 'Simple example of Angular 1 Property Binding.'
       },
       {
         id: 8,
         title: 'A1 - A2: Angular 2 Property Binding',
-        example: '/a1-a2/a2/property-binding/' + demoFile,
+        example: 'a1-a2/a2/property-binding/' + demoFile,
         summary: 'Simple example of Angular 2 Property Binding.'
       },
       {
         id: 9,
         title: 'A1 - A2: Angular 1 Event Binding',
-        example: '/a1-a2/a1/binding-events/' + demoFile,
+        example: 'a1-a2/a1/binding-events/' + demoFile,
         summary: 'Simple example of Angular 1 Event Binding.'
       },
       {
         id: 10,
         title: 'A1 - A2: Angular 2 Event Binding',
-        example: '/a1-a2/a2/binding-events/' + demoFile,
+        example: 'a1-a2/a2/binding-events/' + demoFile,
         summary: 'Simple example of Angular 2 Event Binding.'
       },
       {
         id: 11,
         title: 'A1 - A2: Angular 1 Services and DI',
-        example: '/a1-a2/a1/services/' + demoFile,
+        example: 'a1-a2/a1/services/' + demoFile,
         summary: 'Simple example of Angular 1 Services and DI.'
       },
       {
         id: 12,
         title: 'A1 - A2: Angular 2 Services and DI',
-        example: '/a1-a2/a2/services/' + demoFile,
+        example: 'a1-a2/a2/services/' + demoFile,
         summary: 'Simple example of Angular 2 Services and DI.'
       },
       {
         id: 13,
         title: 'A2: Components',
-        example: '/component-simple/' + demoFile,
+        example: 'component-simple/' + demoFile,
         summary: 'A Component contains application logic that controls a region of the user interface that we call a view.'
       },
       {
         id: 14,
         title: 'A2: Nested Components',
-        example: '/component-nest/' + demoFile,
+        example: 'component-nest/' + demoFile,
         summary: 'A Component may contain other components.'
+      },
+      {
+        id: 15,
+        title: 'A2: Input/Output Components',
+        example: 'component-features/' + demoFile,
+        summary: 'A Component a=may have inputs and outputs.'
       }
     ];
 
