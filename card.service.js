@@ -105,7 +105,7 @@
       {
         id: 15,
         title: 'A2: Input/Output Components',
-        example: 'component-features/' + demoFile,
+        example: 'component-inut-output/' + demoFile,
         summary: 'A Component may have inputs and outputs.'
       }
     ];
