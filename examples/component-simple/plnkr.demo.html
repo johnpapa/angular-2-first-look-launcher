@@ -43,12 +43,12 @@ export class CharacterComponent {
 
   <script>
       System.config({
-        transpiler: 'typescript', 
-        typescriptOptions: { emitDecoratorMetadata: true }, 
+        transpiler: 'typescript',
+        typescriptOptions: { emitDecoratorMetadata: true },
         packages: {
-          'api': {defaultExtension: 'ts'}, 
-          'app': {defaultExtension: 'ts'} 
-        } 
+          'api': {defaultExtension: 'ts'},
+          'app': {defaultExtension: 'ts'}
+        }
       });
     System.import('app/main')
           .then(null, console.error.bind(console));
