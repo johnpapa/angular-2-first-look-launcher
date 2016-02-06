@@ -6945,71 +6945,71 @@ iframe.heightSet {
 }"><input type="hidden" name="files[app/character.component.html]" value="<article>
   <div class=&quot;template&quot;>
 
-  <h4>details</h4>
-
-  <div class=&quot;row&quot;>
-
-    <div class=&quot;mdl-textfield mdl-js-textfield mdl-textfield--floating-label&quot;>
-      <label class=&quot;mdl-textfield__label&quot; for=&quot;nametext&quot;>Name</label>
-      <input type=&quot;text&quot; id=&quot;nametext&quot; class=&quot;mdl-textfield__input&quot;>
-    </div>
+    <h4>details</h4>
 
     <div class=&quot;row&quot;>
-      <a href=&quot;&quot; target=&quot;_blank&quot;>
-        <img src=&quot;&quot; style=&quot;width:50px&quot;>
-      </a>
-    </div>
-  </div>
 
-</div>
-"><input type="hidden" name="files[app/solution/character-solved.component.html]" value="<article>
+      <div class=&quot;mdl-textfield mdl-js-textfield mdl-textfield--floating-label&quot;>
+        <label class=&quot;mdl-textfield__label&quot; for=&quot;nametext&quot;>Name</label>
+        <input type=&quot;text&quot; id=&quot;nametext&quot; class=&quot;mdl-textfield__input&quot;>
+      </div>
+
+      <div class=&quot;row&quot;>
+        <a href=&quot;&quot; target=&quot;_blank&quot;>
+          <img src=&quot;&quot; style=&quot;width:50px&quot;>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</article>"><input type="hidden" name="files[app/solution/character-solved.component.html]" value="<article>
   <div class=&quot;template&quot;>
 
-  <h4>{{character.name | uppercase}} details</h4>
+    <h4>{{character.name | uppercase}} details</h4>
 
-  <div class=&quot;row&quot;
-    [class.selected2]=&quot;isSelected&quot;
-    [ngClass]=&quot;getClasses()&quot;>
+    <div class=&quot;row&quot;
+      [class.selected2]=&quot;isSelected&quot;
+      [ngClass]=&quot;getClasses()&quot;>
 
-    <div class=&quot;mdl-textfield mdl-js-textfield mdl-textfield--floating-label&quot;>
-      <label class=&quot;mdl-textfield__label&quot; for=&quot;nametext&quot;>Name</label>
-      <input type=&quot;text&quot; id=&quot;nametext&quot; class=&quot;mdl-textfield__input&quot;
-        [(ngModel)]=&quot;character.name&quot; />
+      <div class=&quot;mdl-textfield mdl-js-textfield mdl-textfield--floating-label&quot;>
+        <label class=&quot;mdl-textfield__label&quot; for=&quot;nametext&quot;>Name</label>
+        <input type=&quot;text&quot; id=&quot;nametext&quot; class=&quot;mdl-textfield__input&quot;
+          [(ngModel)]=&quot;character.name&quot; />
+      </div>
+
+      <div class=&quot;mdl-textfield mdl-js-textfield mdl-textfield--floating-label&quot;>
+        <label class=&quot;mdl-textfield__label&quot; for=&quot;nametext&quot;>Color</label>
+        <input type=&quot;text&quot; id=&quot;nametext&quot; class=&quot;mdl-textfield__input&quot;
+          [(ngModel)]=&quot;color&quot; />
+      </div>
+
+      <div class=&quot;row&quot;>
+        <a href=&quot;{{character.link}}&quot; target=&quot;_blank&quot;>
+          <img src=&quot;{{character.imageUrl}}&quot; style=&quot;width:50px&quot;
+            [style.background]=&quot;color&quot;
+            (mouseenter)=&quot;color = '#CCC'&quot;
+            (mouseleave)=&quot;color = '#EEE'&quot;
+            >
+        </a>
+      </div>
     </div>
 
-    <div class=&quot;mdl-textfield mdl-js-textfield mdl-textfield--floating-label&quot;>
-      <label class=&quot;mdl-textfield__label&quot; for=&quot;nametext&quot;>Color</label>
-      <input type=&quot;text&quot; id=&quot;nametext&quot; class=&quot;mdl-textfield__input&quot;
-        [(ngModel)]=&quot;color&quot; />
+    <div>
+      <button class=&quot;dashboard-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect
+      mdl-button--accent&quot;
+        [attr.aria-label]=&quot;selectLabel&quot;
+        (click)=&quot;select(character.name)&quot;>Select</button>
     </div>
 
-    <div class=&quot;row&quot;>
-      <a href=&quot;{{character.link}}&quot; target=&quot;_blank&quot;>
-        <img src=&quot;{{character.imageUrl}}&quot; style=&quot;width:50px&quot;
-          [style.background]=&quot;color&quot;
-          (mouseenter)=&quot;color = '#CCC'&quot;
-          (mouseleave)=&quot;color = '#EEE'&quot;
-          >
-      </a>
+    <div class=&quot;row&quot; *ngIf=&quot;isSelected&quot;>
+      Your character {{character.name}} has these vehicles:
+      <ul>
+        <li *ngFor=&quot;#vehicle of vehicles&quot;>{{vehicle.name}}</li>
+      </ul>
     </div>
-  </div>
 
-  <div>
-    <button class=&quot;dashboard-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect
-    mdl-button--accent&quot;
-      [attr.aria-label]=&quot;selectLabel&quot;
-      (click)=&quot;select(character.name)&quot;>Select</button>
   </div>
-
-  <div class=&quot;row&quot; *ngIf=&quot;isSelected&quot;>
-    Your character {{character.name}} has these vehicles:
-    <ul>
-      <li *ngFor=&quot;#vehicle of vehicles&quot;>{{vehicle.name}}</li>
-    </ul>
-  </div>
-
-</div>
-"><input type="hidden" name="files[index.html]" value="<!DOCTYPE html>
+</article>"><input type="hidden" name="files[index.html]" value="<!DOCTYPE html>
 <html>
 
 <head>
