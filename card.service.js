@@ -107,6 +107,12 @@
         title: 'A2: Input/Output Components',
         example: 'component-input-output/' + demoFile,
         summary: 'A Component may have input properties and output events.'
+      },
+      {
+        id: 16,
+        title: 'A2: Data Binding and Directives',
+        example: 'data-binding/' + demoFile,
+        summary: 'Interpolation, Property Binding, Event Binding, Two Way Binding, and built-in Directives.'
       }
     ];
 
