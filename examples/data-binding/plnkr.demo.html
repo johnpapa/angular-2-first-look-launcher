@@ -28,11 +28,11 @@ import { CharacterSolvedComponent } from './solution/character-solved.component'
 })
 export class AppComponent {
   showSolution = false;
-  buttonText = 'Show Solution';
+  buttonText = 'Switch to Solution';
 
   solve() {
     this.showSolution = !this.showSolution;
-    this.buttonText = this.showSolution ? 'Show Starter' : 'Show Solution';
+    this.buttonText = this.showSolution ? 'Switch to  Starter' : 'Switch to Solution';
   }
 }
 "><input type="hidden" name="files[app/character.component.ts]" value="import { Component } from 'angular2/core';
