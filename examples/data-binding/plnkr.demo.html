@@ -10,10 +10,10 @@ import { CharacterSolvedComponent } from './solution/character-solved.component'
   <div>
     <h3>Storyline Tracker - Data Binding Demo</h3>
 
-    <div>
+    <div style=&quot;margin:1em&quot;>
       <button class=&quot;dashboard-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect
       mdl-button--accent&quot;
-        (click)=&quot;solve()&quot;>Show Solution</button>
+        (click)=&quot;solve()&quot;>{{buttonText}}</button>
     </div>
     <div *ngIf=&quot;!showSolution&quot;>
         <story-character></story-character>
@@ -28,9 +28,11 @@ import { CharacterSolvedComponent } from './solution/character-solved.component'
 })
 export class AppComponent {
   showSolution = false;
+  buttonText = 'Show Solution';
 
   solve() {
     this.showSolution = !this.showSolution;
+    this.buttonText = this.showSolution ? 'Show Starter' : 'Show Solution';
   }
 }
 "><input type="hidden" name="files[app/character.component.ts]" value="import { Component } from 'angular2/core';
