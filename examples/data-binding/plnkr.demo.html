@@ -15,12 +15,15 @@ import { CharacterSolvedComponent } from './solution/character-solved.component'
       mdl-button--accent&quot;
         (click)=&quot;solve()&quot;>{{buttonText}}</button>
     </div>
-    <div *ngIf=&quot;!showSolution&quot;>
-        <story-character></story-character>
-    </div>
-    <div *ngIf=&quot;showSolution&quot;>
+
+    <span [ngSwitch]=&quot;showSolution&quot;>
+      <template [ngSwitchWhen]=&quot;true&quot;>
         <story-character-solved></story-character-solved>
-    </div>
+      </template>
+      <template ngSwitchDefault>
+        <story-character></story-character>
+      </template>
+    </span>
   </div>
   `,
   directives: [CharacterComponent, CharacterSolvedComponent],
@@ -64,14 +67,6 @@ export class CharacterComponent {
     this.character = new Character(100, 'Boba Fett', 'dark', 'assets/man.png', 'http://angular.io');
   }
 
-  getClasses() {
-    let classes: string[] = ['bordered'];
-    if (this.isSelected) {
-      classes.push('selected');
-    }
-    return classes.join(' ');
-  }
-
   select(name: string) {
     let msg = `You selected ${name}`;
     console.log(msg);
@@ -112,14 +107,6 @@ export class CharacterSolvedComponent {
 
   constructor() {
     this.character = new Character(100, 'Boba Fett', 'dark', 'assets/man.png', 'http://angular.io');
-  }
-
-  getClasses() {
-    let classes: string[] = ['bordered'];
-    if (this.isSelected) {
-      classes.push('selected');
-    }
-    return classes.join(' ');
   }
 
   select(name: string) {
@@ -6965,11 +6952,21 @@ iframe.heightSet {
 </article>"><input type="hidden" name="files[app/solution/character-solved.component.html]" value="<article>
   <div class=&quot;template&quot;>
 
-    <h4>{{character.name | uppercase}} details</h4>
+    <h4>{{character.name | uppercase}}</h4>
+
+    <p>{{character.name | uppercase}}</p>
+    <p>{{character.name | lowercase}}</p>
+    <p>{{price | currency}}</p>
+    <p>{{value | percent:'1.1-1'}}</p>
+    <p>{{value | number:'1.1-3'}}</p>
+    <p>{{eventDate | date:'medium'}}</p>
+    <p>{{eventDate | date:'yMMMd'}}</p>
+
+
 
     <div class=&quot;row&quot;
       [class.selected2]=&quot;isSelected&quot;
-      [ngClass]=&quot;getClasses()&quot;>
+      [ngClass]=&quot;{selected: this.isSelected}&quot;>
 
       <div class=&quot;mdl-textfield mdl-js-textfield mdl-textfield--floating-label&quot;>
         <label class=&quot;mdl-textfield__label&quot; for=&quot;nametext&quot;>Name</label>
