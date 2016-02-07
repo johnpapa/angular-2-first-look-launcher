@@ -816,8 +816,6 @@ export class DashboardComponent implements OnDestroy, OnInit {
 
   characters: Observable<Character[]>;
 
-  customTrackBy = (index: number, item: any) => item['id'];
-
   constructor(
     private _characterService: CharacterService,
     private _router: Router,
@@ -915,8 +913,6 @@ export class VehicleListComponent implements OnDestroy, OnInit {
   constructor(
     private _filterService: FilterService,
     private _vehicleService: VehicleService) { }
-
-  customTrackBy = (index: number, item: any) => item['id'];
 
   filterChanged(searchText: string) {
     this.filteredVehicles = this._filterService.filter(searchText, ['id', 'name', 'type'], this.vehicles);
@@ -12018,7 +12014,6 @@ iframe.heightSet {
     <div class=&quot;mdl-grid&quot;>
       <div class=&quot;mdl-cell mdl-cell--3-col&quot;
         *ngFor=&quot;#character of characters | async&quot;
-        *ngForTrackBy=&quot;customTrackBy&quot;
         (click)=&quot;gotoDetail(character)&quot;>
 
         <button class=&quot;dashboard-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect
@@ -12037,8 +12032,7 @@ iframe.heightSet {
   <filter-text (changed)=&quot;filterChanged($event)&quot;></filter-text>
 
   <ul class=&quot;vehicles&quot;>
-    <li *ngFor=&quot;#vehicle of filteredVehicles&quot;
-        *ngForTrackBy=&quot;customTrackBy&quot;>
+    <li *ngFor=&quot;#vehicle of filteredVehicles&quot;>
 
       <div class=&quot;mdl-card mdl-shadow--2dp&quot;>
         <div class=&quot;mdl-card__title&quot;>
@@ -12111,12 +12105,12 @@ iframe.heightSet {
 
   <script>
       System.config({
-        transpiler: 'typescript',
-        typescriptOptions: { emitDecoratorMetadata: true },
+        transpiler: 'typescript', 
+        typescriptOptions: { emitDecoratorMetadata: true }, 
         packages: {
-          'api': {defaultExtension: 'ts'},
-          'app': {defaultExtension: 'ts'}
-        }
+          'api': {defaultExtension: 'ts'}, 
+          'app': {defaultExtension: 'ts'} 
+        } 
       });
     System.import('app/main')
           .then(null, console.error.bind(console));

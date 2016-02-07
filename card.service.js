@@ -15,7 +15,7 @@
       {
         id: 0,
         title: 'Angular 2 Storyline Tracker',
-        example: 'storyline-tracker/demo1.html', //+ demoFile,
+        example: 'storyline-tracker/demo2.html', //+ demoFile,
         summary: 'Example of all of the concepts put together in an application.'
       },
       {
