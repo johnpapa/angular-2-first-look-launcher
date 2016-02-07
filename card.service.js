@@ -9,13 +9,14 @@
   CardService.$inject = [];
   function CardService() {
     this.getCards = getCards;
+    var cacheBuster = '?bust=' + Date.now();
 
-    var demoFile = 'plnkr.demo.html';
+    var demoFile = 'plnkr.demo.html' + cacheBuster;
     var cards = [
       {
         id: 0,
         title: 'Angular 2 Storyline Tracker',
-        example: 'storyline-tracker/demo3.html', //+ demoFile,
+        example: 'storyline-tracker/' + demoFile,
         summary: 'Example of all of the concepts put together in an application.'
       },
       {
