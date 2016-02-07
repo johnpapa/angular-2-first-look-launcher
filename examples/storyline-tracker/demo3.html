@@ -158,7 +158,7 @@ import { CharactersComponent, CharacterService } from './characters/characters';
 import { DashboardComponent } from './dashboard/dashboard';
 import { VehiclesComponent } from './vehicles/vehicles';
 import { CONFIG, MessageService } from './shared/shared';
-import { EntityService, ExceptionService, FilterService, ModalComponent, ModalService, SpinnerComponent, SpinnerService, ToastComponent, ToastService } from './blocks/blocks';
+import { EntityService, ExceptionService, ModalComponent, ModalService, SpinnerComponent, SpinnerService, ToastComponent, ToastService } from './blocks/blocks';
 
 @Component({
   selector: 'story-app',
@@ -174,7 +174,6 @@ import { EntityService, ExceptionService, FilterService, ModalComponent, ModalSe
     CharacterService,
     EntityService,
     ExceptionService,
-    FilterService,
     MessageService,
     ModalService,
     SpinnerService,
@@ -534,7 +533,8 @@ import { FilterService, FilterTextComponent } from '../blocks/blocks';
   templateUrl: './app/characters/character-list.component.html',
   directives: [FilterTextComponent, ROUTER_DIRECTIVES],
   styleUrls: ['./app/characters/character-list.component.css'],
-  pipes: [SortCharactersPipe]
+  pipes: [SortCharactersPipe],
+  providers: [FilterService]
 })
 export class CharacterListComponent implements OnDestroy, OnInit {
   private _dbResetSubscription: Subscription<any>;
@@ -822,11 +822,13 @@ export class DashboardComponent implements OnDestroy, OnInit {
     private _toastService: ToastService) { }
 
   getCharacters() {
+    // this._spinnerService.show();
     this.characters = this._characterService.getCharacters()
       .catch(e => {
         this._toastService.activate(`${e}`);
         return Observable.of();
       })
+      // .finally(() => { this._spinnerService.hide(); })
   }
 
   gotoDetail(character: Character) {
@@ -901,7 +903,8 @@ import { Vehicle, VehicleService } from './vehicle.service';
   templateUrl: './app/vehicles/vehicle-list.component.html',
   directives: [FilterTextComponent, ROUTER_DIRECTIVES],
   styleUrls: ['./app/vehicles/vehicle-list.component.css'],
-  pipes: [InitCapsPipe]
+  pipes: [InitCapsPipe],
+  providers: [FilterService]
 })
 export class VehicleListComponent implements OnDestroy, OnInit {
   private _dbResetSubscription: Subscription<any>;
@@ -12136,7 +12139,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License."><input type="hidden" name="files[README.md]" value="# Storyline Tracker
 
-## Getting Started
+# Getting Started
 
 1. Fork and clone this repo
 
