@@ -114,6 +114,24 @@
         title: 'A2: Data Binding and Directives',
         example: 'data-binding/' + demoFile,
         summary: 'Interpolation, Property Binding, Event Binding, Two Way Binding, and built-in Directives.'
+      },
+      {
+        id: 17,
+        title: 'A2: Need Services',
+        example: 'need-service/' + demoFile,
+        summary: 'A Service provides anything our application needs. It often shares data or functions between other Angular features'
+      },
+      {
+        id: 18,
+        title: 'A2: Services and Dependency Injection',
+        example: 'services-and-di/' + demoFile,
+        summary: 'Dependency Injection is how we provide an instance of a class to another Angular feature.'
+      },
+      {
+        id: 19,
+        title: 'A2: Component Lifecycle Hooks',
+        example: 'lifecycle/' + demoFile,
+        summary: 'Lifecycle Hooks allow us to tap into specific moments in the application lifecycle to perform logic.'
       }
     ];
 
