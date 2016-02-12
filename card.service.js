@@ -118,7 +118,7 @@
       {
         id: 17,
         title: 'A2: Need Services',
-        example: 'need-service/' + demoFile,
+        example: 'need-services/' + demoFile,
         summary: 'A Service provides anything our application needs. It often shares data or functions between other Angular features'
       },
       {
