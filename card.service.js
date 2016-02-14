@@ -135,18 +135,24 @@
       },
       {
         id: 20,
+        title: 'A2: Needs Http',
+        example: 'need-http/' + demoFile,
+        summary: 'Angular applications can connect with a web server to get or save data using HTTP.'
+      },
+      {
+        id: 21,
         title: 'A2: Http',
         example: 'http/' + demoFile,
         summary: 'Angular applications can connect with a web server to get or save data using HTTP.'
       },
       {
-        id: 21,
+        id: 22,
         title: 'A2: Http with Async Pipe',
         example: 'http-async/' + demoFile,
         summary: 'Using Http with Observables and the Async Pipe.'
       },
       {
-        id: 22,
+        id: 23,
         title: 'A2: Http with Promises',
         example: 'http-promise/' + demoFile,
         summary: 'Using Http with promises.'
