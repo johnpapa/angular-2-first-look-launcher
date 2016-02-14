@@ -172,7 +172,7 @@
       {
         id: 26,
         title: 'A2: Child Router',
-        example: 'child-router/' + demoFile,
+        example: 'router-child/' + demoFile,
         summary: 'Child routing isolates routing configuration to a set of related coponents, helping make that set extractable.'
       }
     ];
