@@ -137,7 +137,7 @@
         id: 20,
         title: 'A2: Needs Http',
         example: 'need-http/' + demoFile,
-        summary: 'Angular applications can connect with a web server to get or save data using HTTP.'
+        summary: 'Angular applications can connect with a web server to get or save data using HTTP. This example lacks http, whereas the next example has it.'
       },
       {
         id: 21,
