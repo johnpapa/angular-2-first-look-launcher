@@ -13,10 +13,15 @@
   <link rel="stylesheet" href="assets/angular-material.min.css" />
   <link rel="stylesheet" href="assets/app.css" />
 
+  <style type="text/css">
+    [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+      display: none !important;
+    }
+  </style>
   <meta name="viewport" content="initial-scale=1" />
 </head>
 
-<body>
+<body ng-controller="CardController as vm">
 
   <md-toolbar class="dark">
     <div class="md-toolbar-tools">
@@ -35,23 +40,34 @@
 
   <md-content flex>
     <p class="intro">The following are examples for the core fundamentals of Angular 2. Click the button to view each sample in a plunker.</p>
-    <md-card>
+    <md-card ng-repeat="card in vm.cards">
       <md-toolbar class="md-primary md-hue-0 card-title">
         <md-card-title>
           <md-card-title-text>
-            <span class="md-headline">Now updated for Angular's 2.x release</span>
+            <span class="md-headline">{{card.id}}. {{card.title}}</span>
           </md-card-title-text>
         </md-card-title>
       </md-toolbar>
       <md-card-title>
         <md-card-title-text>
-          <span class="md-subhead">This course has been updated to reflect the Angular 2 final release. All code samples are now located at </span><a href="http://angular2-first-look.azurewebsites.net/"></a>
+          <span class="md-subhead">{{card.summary}}</span>
         </md-card-title-text>
       </md-card-title>
+      <md-card-actions layout="row" layout-align="end center">
+        <md-button class="md-accent md-raised" ng-href="examples/{{card.example}}" target="_blank">View Sample
+        </md-button>
+      </md-card-actions>
     </md-card>
   </md-content>
 
+  <script src="assets/angular.min.js"></script>
+  <script src="assets/angular-animate.min.js"></script>
+  <script src="assets/angular-aria.min.js"></script>
   <script src="assets/angular-material.min.js"></script>
+  <script src="a2firstlook.module.js"></script>
+  <script src="card.controller.js"></script>
+  <script src="card.service.js"></script>
+
 </body>
 
 </html>
